@@ -3,7 +3,7 @@ html(lang="en" data-ng-app="app")
 	head
 		base(href="/")
 		meta(charset="utf-8")
-		title Questions
+		title(data-state-title="Questions")
 		meta(name="description" content="Monterail - Junior Front-End Developer Task - Dawid Żukowski")
 		meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
 		meta(http-equiv="x-ua-compatible" content="ie=edge")
@@ -17,5 +17,6 @@ html(lang="en" data-ng-app="app")
 		meta(name="theme-color" content="#ffffff")
 		link(href="css/main.css" rel="stylesheet")
 
-	body(data-ng-controller="MainController")
+	body
+		div(data-ui-view)
 		script(src="app/app.js")

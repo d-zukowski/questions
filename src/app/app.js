@@ -8,23 +8,31 @@ import 'angular-moment';
 
 // App
 
-import AllQuestionsFactory from './all-questions/all-questions.factory';
-import SingleQuestionFactory from './single-question/single-question.factory';
-import UserProfileFactory from './user-profile/user-profile.factory';
+import RoutingConfig from './config/routing.config';
 
-import MainController from './main.controller';
-import AllQuestionsController from './all-questions/all-questions.controller';
-import SingleQuestionController from './single-question/single-question.controller';
-import UserProfileController from './user-profile/user-profile.controller';
+import AllQuestionsFactory from './states/all-questions/all-questions.factory';
+import SingleQuestionFactory from './states/single-question/single-question.factory';
+import UserProfileFactory from './states/user-profile/user-profile.factory';
 
+import HomeController from './home/home.controller';
+import AllQuestionsController from './states/all-questions/all-questions.controller';
+import SingleQuestionController from './states/single-question/single-question.controller';
+import UserProfileController from './states/user-profile/user-profile.controller';
 
-angular.module('app', ['ui.router', 'ngPageTitle', 'angularMoment'])
+const dependencies = [
+    'ui.router',
+    'ngPageTitle',
+    'angularMoment'
+];
+
+angular.module('app', dependencies)
+    .config(RoutingConfig)
 
     .factory('AllQuestionsFactory', AllQuestionsFactory)
     .factory('SingleQuestionFactory', SingleQuestionFactory)
     .factory('UserProfileFactory', UserProfileFactory)
 
-    .controller('MainController', MainController)
+    .controller('HomeController', HomeController)
     .controller('AllQuestionsController', AllQuestionsController)
-    .controller('AllQuestionsController', AllQuestionsController)
-    .controller('AllQuestionsController', AllQuestionsController);
+    .controller('SingleQuestionController', SingleQuestionController)
+    .controller('UserProfileController', UserProfileController);
