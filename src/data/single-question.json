@@ -1,0 +1,72 @@
+{
+    "id": 1,
+    "author": 1,
+    "question": "Will insulin make my patient gain weight?",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vestibulum eros ut lacus hendrerit, quis egestas est congue. Suspendisse potenti. Aenean lacinia metus vitae tortor euismod pretium. Suspendisse potenti. Nam id mauris sit amet ligula congue tempus. Duis enim sapien, vestibulum sit amet tincidunt vitae, sollicitudin quis arcu.",
+    "answers": [
+        {
+            "author": 3,
+            "date": "2016-12-18 15:00",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vestibulum eros ut lacus hendrerit, quis egestas est congue. Suspendisse potenti.",
+            "stats": {
+                "votes": {
+                    "up": 8,
+                    "down": 0
+                }                
+            },
+            "comments": [
+                {
+                    "author": 4,
+                    "date": "2016-12-18 16:00",
+                    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vestibulum eros ut lacus hendrerit, quis egestas est congue. Suspendisse potenti.",
+                    "stats": {
+                        "votes": {
+                            "up": 2,
+                            "down": 0
+                        }                
+                    }
+                }            
+            ]
+        },
+        {
+            "author": 3,
+            "date": "2016-12-18 15:00",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vestibulum eros ut lacus hendrerit, quis egestas est congue. Suspendisse potenti.",
+            "stats": {
+                "votes": {
+                    "up": 8,
+                    "down": 0
+                }                
+            },
+            "comments": []
+        }        
+    ],
+    "activities": [
+        {
+            "author": 2,
+            "type": 1
+        },
+        {
+            "author": 3,
+            "type": 1
+        },
+        {
+            "author": 4,
+            "type": 1
+        },
+        {
+            "author": 5,
+            "type": 2
+        }                                                               
+    ],
+    "moreActivities": 3,
+    "stats": {
+        "relatedDiscussion": 1,
+        "peersInvolved": 6,
+        "conversations": 3,
+        "votes": {
+            "up": 19,
+            "down": 0
+        }
+    }
+}

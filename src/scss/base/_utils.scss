@@ -1,0 +1,189 @@
+// Background
+
+@mixin background-image ($url, $x: center, $y: center, $repeat: no-repeat, $size: cover) {
+    background-image: url($url);
+    background-position-x: $x;
+    background-position-y: $y;
+    background-repeat: $repeat;
+    background-size: $size;    
+}
+
+
+// Font
+
+@mixin font ($color: $black, $font-size: 1.3rem, $line-height: $font-size * 2, $font-weight: normal) {
+    color: $color;
+    font-size: $font-size;
+    line-height: $line-height;
+    font-weight: $font-weight;
+}
+
+
+// Flexbox
+
+@mixin flex ($x: center, $y: center, $type: row, $wrap: nowrap) {
+    display: flex;
+    justify-content: $x;
+    align-items: $y;
+    flex-flow: $type $wrap;
+}
+
+
+// Gradients 
+
+@mixin gradient-radial ($in-color, $out-color) {
+    background: $out-color;
+    background: radial-gradient(ellipse at center, $in-color 0%, $out-color 100%);
+}
+
+
+// Margins
+
+.no-margin {
+    margin: 0;
+}
+
+.no-margin-top {
+    margin-top: 0;
+}
+
+.no-margin-bottom {
+    margin-bottom: 0;
+}
+
+.no-margin-left {
+    margin-left: 0;
+}
+
+.no-margin-right {
+    margin-right: 0;
+}
+
+
+// Paddings
+
+.no-padding {
+    padding: 0;
+}
+
+.no-padding-top {
+    padding-top: 0;
+}
+
+.no-padding-bottom {
+    padding-bottom: 0;
+}
+
+.no-padding-left {
+    padding-left: 0;
+}
+
+.no-padding-right {
+    padding-right: 0;
+}
+
+
+// Positions
+
+@mixin absolute ($z-index: 1, $top: 0, $right: null, $bottom: null, $left: 0) {
+    position: absolute;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+    z-index: $z-index;
+}
+
+@mixin fixed ($z-index: 1, $top: 0, $right: null, $bottom: null, $left: 0) {
+    position: fixed;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+    z-index: $z-index;
+}
+
+
+// Pseudo elements
+
+@mixin before ($z-index: 1, $top: 0, $right: null, $bottom: null, $left: 0) {
+    content: '';
+    position: absolute;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+    z-index: $z-index;
+}
+
+@mixin after ($z-index: 1, $top: 0, $right: null, $bottom: null, $left: 0) {
+    content: '';
+    position: absolute;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+    z-index: $z-index;
+}
+
+
+// Scrolling
+
+.no-scroll {
+    overflow: hidden;
+}
+
+.no-scroll-x {
+    overflow-x: hidden;
+}
+
+.no-scroll-y {
+    overflow-y: hidden;
+}
+
+
+// Show / Hide
+
+.show {
+    display: block !important;
+}
+
+.hide {
+    display: none !important;
+}
+
+.opacity-1 {
+    opacity: 1;
+}
+
+.opacity-0 {
+    opacity: 0;
+}
+
+
+// Sizes
+
+@mixin size ($size) {
+    width: $size;
+    height: $size;
+}
+
+@mixin sizes ($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+
+// Spacing
+
+@mixin no-spacing {
+    margin: 0;
+    padding: 0;
+}
+
+
+// Transitions
+
+@mixin transition ($time) {
+    transition: all $time ease-in-out;
+}

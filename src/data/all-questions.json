@@ -1,0 +1,94 @@
+{
+    "1": {
+        "author": 1,
+        "question": "Will insulin make my patient gain weight?",
+        "activities": [
+            {
+                "author": 2,
+                "type": 1
+            },
+            {
+                "author": 3,
+                "type": 1
+            },
+            {
+                "author": 4,
+                "type": 1
+            },
+            {
+                "author": 5,
+                "type": 2
+            }                                                               
+        ],
+        "moreActivities": 3,
+        "stats": {
+            "relatedDiscussion": 1,
+            "peersInvolved": 6,
+            "conversations": 3,
+            "votes": {
+                "up": 19,
+                "down": 0
+            }
+        }
+    },
+    "2": {
+        "author": 6,
+        "question": "Vegan diet in diabetes treatment?",
+        "activities": [
+            {
+                "author": 4,
+                "type": 1
+            },
+            {
+                "author": 5,
+                "type": 1
+            },
+            {
+                "author": 7,
+                "type": 1
+            },
+            {
+                "author": 3,
+                "type": 2
+            }                                                                
+        ],
+        "moreActivities": 6,
+        "stats": {
+            "relatedDiscussion": 2,
+            "peersInvolved": 9,
+            "conversations": 5,
+            "votes": {
+                "up": 19,
+                "down": 0
+            }
+        }
+    },
+    "3": {
+        "author": 5,
+        "question": "Vegan diet to stop diabetes progress",
+        "activities": [
+            {
+                "author": 7,
+                "type": 1
+            },
+            {
+                "author": 3,
+                "type": 1
+            },
+            {
+                "author": 1,
+                "type": 2
+            }                                                              
+        ],
+        "moreActivities": 0,
+        "stats": {
+            "relatedDiscussion": 5,
+            "peersInvolved": 4,
+            "conversations": 0,
+            "votes": {
+                "up": 19,
+                "down": 0
+            }
+        }
+    }      
+}
