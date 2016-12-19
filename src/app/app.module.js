@@ -8,16 +8,16 @@ import 'angular-moment';
 
 // App
 
-import RoutingConfig from './config/routing.config';
+import RoutingConfig from './routes.config';
 
-import AllQuestionsFactory from './states/all-questions/all-questions.factory';
-import SingleQuestionFactory from './states/single-question/single-question.factory';
-import UserProfileFactory from './states/user-profile/user-profile.factory';
+import AllQuestionsFactory from './components/all-questions/all-questions.factory';
+import SingleQuestionFactory from './components/single-question/single-question.factory';
+import UserProfileFactory from './shared/user-profile/user-profile.factory';
 
-import HomeController from './home/home.controller';
-import AllQuestionsController from './states/all-questions/all-questions.controller';
-import SingleQuestionController from './states/single-question/single-question.controller';
-import UserProfileController from './states/user-profile/user-profile.controller';
+import HomeController from './components/home/home.controller';
+import AllQuestionsController from './components/all-questions/all-questions.controller';
+import SingleQuestionController from './components/single-question/single-question.controller';
+import UserProfileController from './shared/user-profile/user-profile.controller';
 
 const dependencies = [
     'ui.router',

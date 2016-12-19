@@ -1,6 +1,6 @@
 
 
-##**Monterail - Junior Front-End Developer Task **
+## **Monterail - Junior Front-End Developer Task**
 
 Author: **[Dawid Żukowski](http://dawid-zukowski.pl/)**.
 
@@ -18,7 +18,7 @@ Author: **[Dawid Żukowski](http://dawid-zukowski.pl/)**.
 ####**Clone repo:**
 
 ```
-git clone https://bitbucket.org/dawid-zukowski/monterail-junior-front-end-developer-task.git
+git clone https://github.com/d-zukowski/questions.git
 ```
 
 ---

@@ -8,11 +8,11 @@ function RoutingConfig ($stateProvider, $urlRouterProvider, $locationProvider) {
             views: {      
                 '': {
                     controller: 'HomeController',
-                    templateUrl: 'app/home/home.html'
+                    templateUrl: 'app/components/home/home.view.html'
                 },
                 'userProfile@home': {
                     controller: 'UserProfileController',
-                    templateUrl: 'app/states/user-profile/user-profile.html'
+                    templateUrl: 'app/shared/user-profile/user-profile.view.html'
                 }
             }             
         })
@@ -23,7 +23,7 @@ function RoutingConfig ($stateProvider, $urlRouterProvider, $locationProvider) {
             data: {
                 pageTitle: 'Questions'
             },              
-            templateUrl: 'app/states/all-questions/all-questions.html'   
+            templateUrl: 'app/components/all-questions/all-questions.view.html'   
         })
         
         .state('home.singlequestion', {        
@@ -32,7 +32,7 @@ function RoutingConfig ($stateProvider, $urlRouterProvider, $locationProvider) {
             data: {
                 pageTitle: 'Single question'
             },              
-            templateUrl: 'app/states/single-question/single-question.html'
+            templateUrl: 'app/components/single-question/single-question.view.html'
         });        
                        
     $urlRouterProvider.otherwise('/');

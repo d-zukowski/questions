@@ -95,13 +95,13 @@ gulp.task('build-clean-js', function () {
 
 gulp.task('build-compile-js', function () {
     return browserify({
-        entries: ['./src/app/app.js']
+        entries: ['./src/app/app.module.js']
     })
     .transform(babelify.configure({
         presets : ['es2015']
     }))
     .bundle()    
-    .pipe(source('app.js'))
+    .pipe(source('main.js'))
     .pipe(ngAnnotate())     
     .pipe(gulp.dest('build/app'));
 });
