@@ -25,6 +25,8 @@ const dependencies = [
     'angularMoment'
 ];
 
+console.log('test');
+
 angular.module('app', dependencies)
     .config(RoutingConfig)
 

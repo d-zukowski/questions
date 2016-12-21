@@ -1,6 +1,5 @@
 @charset "UTF-8";
 
-
 // Fonts
 
 @import url('https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&subset=latin-ext');
@@ -45,24 +44,24 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-arrow-left:before {
-  content: "\61";
-}
-.icon-plus:before {
-  content: "\62";
-}
 .icon-cancel:before {
   content: "\63";
 }
 .icon-level:before {
   content: "\64";
 }
-.icon-arrow-right:before {
-  content: "\65";
-}
 .icon-caret-up:before {
   content: "\69";
 }
 .icon-caret-down:before {
   content: "\6a";
+}
+.icon-arrow-left:before {
+  content: "\66";
+}
+.icon-arrow-right:before {
+  content: "\67";
+}
+.icon-plus:before {
+  content: "\68";
 }

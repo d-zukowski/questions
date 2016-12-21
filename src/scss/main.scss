@@ -1,7 +1,6 @@
 // Boostrap
 
-$enable-flex: true;
-
+@import 'base/bootstrap';
 @import '../../node_modules/bootstrap/scss/variables';
 @import '../../node_modules/bootstrap/scss/mixins';
 @import '../../node_modules/bootstrap/scss/normalize';
@@ -12,15 +11,20 @@ $enable-flex: true;
 // Styles
 
 @import 'base/colors';
+@import 'base/fonts';
 @import 'base/variables';
 @import 'base/utils';
 @import 'base/base';
 
+@import 'modules/actions';
+@import 'modules/boxes';
 @import 'modules/buttons';
 @import 'modules/forms';
 @import 'modules/images';
 @import 'modules/typography';
 
+@import 'layout/home';
+@import 'layout/header';
 @import 'layout/all-questions';
 @import 'layout/single-question';
 @import 'layout/user-profile';

@@ -63,18 +63,20 @@ gulp.task('build-clean-css', function () {
 gulp.task('build-compile-scss', function () {
     return gulp.src(['src/scss/main.scss']) 
         .pipe(plumber())
-        .pipe(sourcemaps.init({loadMaps: true}))
+        // .pipe(sourcemaps.init({loadMaps: true}))
         .pipe(sass.sync())
-        .pipe(sourcemaps.write('../maps/css/'))                          
-        .pipe(gulp.dest('build/css/'))
-        .pipe(browserSync.stream());
+        // .pipe(sourcemaps.write('../maps/css/'))                          
+        .pipe(gulp.dest('build/css/'));
 });
 
 gulp.task('build-prefix-css', function () {
     return gulp.src('build/css/**/*.css')  
         .pipe(autoprefixer({browsers: ['last 10 versions', 'IE 10']}))                  
         .pipe(gulp.dest('build/css/'))
-        .pipe(browserSync.stream());
+        .pipe(browserSync.reload({
+          stream: true
+        }));        
+        
 });
 
 gulp.task('build-compile-css', function () {
@@ -183,7 +185,7 @@ gulp.task('build-browsersync', function () {
 // *** Build - watchers *** 
 
 gulp.task('build-watch', function () {
-    gulp.watch('src/scss/**/*.scss', ['build-css', browserSync.reload]);
+    gulp.watch('src/scss/**/*.scss', ['build-css']);
     gulp.watch('src/**/*.js', ['build-js', browserSync.reload]);
     gulp.watch('src/**/*.pug', ['build-pug', browserSync.reload]);
     gulp.watch('src/data/**/*', ['build-data', browserSync.reload]);

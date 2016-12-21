@@ -1,1 +1,80 @@
-p all-questions.pug
+.all-questions
+    .all-questions__question
+        .row
+            .col-xl-12
+                .box-question
+                    .box-question--top
+                        .row
+                            .col-xl-9
+                                .box-question__heading
+                                    .row
+                                        .col-xl-2
+                                            .box-question__heading--avatar
+                                                .avatar.avatar--small
+                                                    img.avatar__img(src="img/avatars/1.jpg" alt="")   
+                                        .col-xl-10        
+                                            .box-question__heading--question
+                                                .author
+                                                    a(href="") Eva
+                                                    span.text--light.separator-left is asking:        
+                                                .title
+                                                    h2 Will insulin make my patient gain weight?
+
+                        .box-question--bottom
+                            .row
+                                .col-xl-9
+                                    .box-question__content
+                                        .box-question__content--col
+                                            .box-question__content--asked
+                                                .action.action--asked
+                                                    span.text--light asked
+
+                                        .box-question__content--col
+                                            .box-question__content--more-activites
+                                                .action.action--more-activites
+                                                    span.text--italic more activites
+
+                                        .box-question__content--col
+                                            .box-question__content--activity
+                                                .avatar.avatar--small
+                                                    img.avatar__img(src="img/avatars/1.jpg" alt="")                                            
+                                                .action.action--commented
+                                                    span.text--light commented
+
+                                        .box-question__content--col
+                                            .box-question__content--activity
+                                                .avatar.avatar--small
+                                                    img.avatar__img(src="img/avatars/1.jpg" alt="")                                            
+                                                .action.action--commented
+                                                    span.text--light commented
+
+                                        .box-question__content--col
+                                            .box-question__content--activity
+                                                .avatar.avatar--small
+                                                    img.avatar__img(src="img/avatars/1.jpg" alt="")                                            
+                                                .action.action--commented
+                                                    span.text--light commented
+
+                                        .box-question__content--col
+                                            .box-question__content--activity
+                                                .avatar.avatar--small
+                                                    img.avatar__img(src="img/avatars/1.jpg" alt="")                                            
+                                                .action.action--answered
+                                                    span.text--light answered                                                                                                                                                                                                  
+                                                
+                                .col-xl-3
+                                    .box-question__aside
+                                        .all-questions__question--stats
+                                            .stat
+                                                span.text--basic 1
+                                                span.text--italic.separator-left related discussion
+                                            .stat
+                                                span.text--basic 1
+                                                span.text--italic.separator-left related discussion
+                                            .stat
+                                                span.text--basic 1
+                                                span.text--italic.separator-left related discussion                                                                                                
+
+    .all-questions__load-more
+        button.btn-link
+            | load more questions

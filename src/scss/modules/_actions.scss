@@ -1,0 +1,52 @@
+.action {
+    @include flex(center, flex-end);
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.action--asked {
+    width: 100%;
+    border-top: 1px solid $gray-500;
+    padding-top: 8px;
+}
+
+.action--more-activites {
+    text-align: center;
+
+    span {
+        margin-bottom: 5px;
+    }
+
+}
+
+.action--commented {
+    width: 100%;
+    border-top: 1px solid $gray-500;
+    padding-top: 6px;
+}
+
+.action--answered {
+    width: 100%;
+    border-top: 1px solid $gray-600;
+    padding-top: 6px;
+
+    @include after(2, null, null, 0, 0) {
+        @include size(10px);
+        border-radius: 50%;
+        background: $black;
+        left: calc(50% - 5px);
+        bottom: -15px;
+    }
+
+}
+
+.action--more-activites, .action--commented {
+    
+    @include after(2, null, null, 0, 0) {
+        @include size(10px);
+        border-radius: 50%;
+        background: $gray-500;
+        left: calc(50% - 5px);
+        bottom: -15px;
+    }
+}

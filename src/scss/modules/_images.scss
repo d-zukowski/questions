@@ -1,0 +1,36 @@
+.avatar {
+    overflow: hidden;
+    border-radius: 50%;
+    position: relative;
+    z-index: 1;             
+
+    @include after(2) {
+        @include size(100%);
+        @include transition(.2s);
+    }
+
+    .avatar__img {
+        object-fit: cover;
+        width: 100%;
+    }
+
+    &--small {
+        @include size(50px);
+        cursor: pointer;
+
+        &:hover {
+
+            @include after(2) {
+                @include size(100%);
+                background: rgba($blue-dark, .35);
+            }  
+
+        } 
+
+    }
+
+    &--large {
+        @include size(76px);
+    }
+
+}

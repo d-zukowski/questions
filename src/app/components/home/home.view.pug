@@ -1,8 +1,128 @@
-p home.pug
+header.header
+    .container
 
-a(ui-sref=".allquestions") All
-a(ui-sref=".singlequestion") Single
+        .header__content
 
-ui-view
+            .header__content--top
+                .row
+                    .col-xl-2
+                        .header__aside
+                            .header__back
+                                button.btn-round.btn-round--large.btn-round--linear
+                                    i.icon-arrow-left
+
+                    .col-xl-8
+                        .header__main
+                            .header__main--left
+                                .header__logo
+                                    h1 Questions
+                                .header__add
+                                    button.btn-round.btn-round--filled
+                                        i.icon-plus                            
+
+                            .header__main--right
+                                .header__filters
+                                    .radio
+                                        input(type="radio" id="radio1" name="radio")
+                                        label(for="radio1")
+                                            span
+                                            | My shelf
+
+                                    .radio
+                                        input(type="radio" id="radio2" name="radio")
+                                        label(for="radio2")
+                                            span
+                                            | All questions
+
+                                .header__sort
+                                    span.text--italic Sort by:
+                                    span.separator-both
+                                        a(href="" class="active") recent
+                                    span.text--italic or
+                                    span.separator-left
+                                        a(href="") hot
+
+            .header__content--bottom
+                .row
+                    .col-xl-8.offset-xl-2         
+                        .header__search
+                            .header__search--input
+                                input.input(type="text" placeholder="Search questions")
+                            .header__search--button
+                                button.btn-rectangle.btn-rectangle--light
+                                    span.text-uppercase Search
+                                            
+.container
+    .content
+        .row
+            .col-xl-8.offset-xl-2
+
+                ui-view
+
+                div(ng-hide="true")
+                    button.btn-round.btn-round--linear
+                        i.icon-arrow-left
+                    button.btn-round.btn-round--filled
+                        i.icon-plus
+                    button.btn-round.btn-round--large.btn-round--linear
+                        i.icon-arrow-left
+                    button.btn-round.btn-round--large.btn-round--filled      
+                        i.icon-plus          
+
+                    button.btn-rectangle.btn-rectangle--light
+                        span.text-uppercase Search
+
+                    button.btn-rectangle.btn-rectangle--dark
+                        span.text-uppercase.action Give
+                        |  new answer
+
+                    button.btn-triangle.btn-triangle--filled
+                        i.icon-caret-up
+
+                    button.btn-triangle.btn-triangle--filled
+                        i.icon-caret-down                 
+
+                    button.btn-link
+                        | load more questions   
+
+
+                    .avatar.avatar--small
+                        img.avatar__img(src="img/avatars/1.jpg" alt="")
+                            
+
+                    .avatar.avatar--large
+                        img.avatar__img(src="img/avatars/7.jpg" alt="")
+
+
+                    .radio
+                        input(type="radio" id="radio1" name="radio")
+                        label(for="radio1")
+                            span
+                            | Radio Button 1
+
+
+                    .radio
+                        input(type="radio" id="radio2" name="radio")
+                        label(for="radio2")
+                            span
+                            | Radio Button 2
+
+                    input.input(type="text" placeholder="Search questions")
+
+                    h1 Questions
+
+                    h2 Will insulin make my patient gain weight?
+
+                    .text--basic 6 Saturday afternoon
+
+                    .text--italic peers involved
+
+                    .text--light member for
+
+                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vestibulum eros ut lacus hendrerit, quis egestas est congue. Suspendisse potenti. Aenean lacinia metus vitae tortor euismod pretium. Suspendisse potenti. Nam id mauris sit amet ligula congue tempus. Duis enim sapien, vestibulum sit amet tincidunt vitae, sollicitudin quis arcu.
+
+                    a(href="#") unfollow
+
+                
 
 div(ui-view="userProfile")

@@ -1,0 +1,24 @@
+.all-questions {
+    background: $white;
+    box-shadow: 1px 0 3px $gray-200;
+}
+
+    .all-questions__question {
+        padding-bottom: 42px;
+    }
+
+        .all-questions__question--stats {
+            @include flex(space-between, flex-start, column);
+            margin-top: 35px;
+            height: 155px;
+
+            .stat {
+                margin-left: 30px;
+                margin-bottom: 35px;
+            }
+
+        }
+
+    .all-questions__load-more {
+        border-top: 1px solid $gray-300;
+    }
