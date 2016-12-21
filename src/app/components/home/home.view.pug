@@ -15,7 +15,8 @@ header.header
                         .header__main
                             .header__main--left
                                 .header__logo
-                                    h1 Questions
+                                    a(href="/")
+                                         h1 Questions
                                 .header__add
                                     button.btn-round.btn-round--filled
                                         i.icon-plus                            
@@ -23,13 +24,13 @@ header.header
                             .header__main--right
                                 .header__filters
                                     .radio
-                                        input(type="radio" id="radio1" name="radio")
+                                        input(type="radio" id="radio1" name="radio" ng-model="filterBy.author" value="{{ loggedUserID }}")
                                         label(for="radio1")
                                             span
                                             | My shelf
 
                                     .radio
-                                        input(type="radio" id="radio2" name="radio")
+                                        input(type="radio" id="radio2" name="radio" ng-model="filterBy.author" value="" selected)
                                         label(for="radio2")
                                             span
                                             | All questions
@@ -37,19 +38,19 @@ header.header
                                 .header__sort
                                     span.text--italic Sort by:
                                     span.separator-both
-                                        a(href="" class="active") recent
+                                        a(href="" ng-click="sortQuestions('recent')" ng-class="{'active': sortBy == 'id'}") recent
                                     span.text--italic or
                                     span.separator-left
-                                        a(href="") hot
+                                        a(href="" ng-click="sortQuestions('hot')" ng-class="{'active': sortBy == 'moreActivitiesLength'}") hot
 
             .header__content--bottom
                 .row
                     .col-xl-8.offset-xl-2         
                         .header__search
                             .header__search--input
-                                input.input(type="text" placeholder="Search questions")
+                                input.input(type="text" placeholder="Search questions" ng-model="searchValue")
                             .header__search--button
-                                button.btn-rectangle.btn-rectangle--light
+                                button.btn-rectangle.btn-rectangle--light(ng-click="searchQuestion()")
                                     span.text-uppercase Search
                                             
 .container

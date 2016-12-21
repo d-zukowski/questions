@@ -11,10 +11,15 @@ h1 {
     font-family: $os;
     letter-spacing: -.1rem;
     text-transform: uppercase;
+    @include transition(.1s);
+
+    &:hover {
+        color: $blue-dark;
+    }
 
     @include min-sm {
     }  
-
+    
 }
 
 h2 {

@@ -10,6 +10,7 @@ import 'angular-moment';
 
 import RoutingConfig from './routes.config';
 
+import HomeFactory from './components/home/home.factory';
 import AllQuestionsFactory from './components/all-questions/all-questions.factory';
 import SingleQuestionFactory from './components/single-question/single-question.factory';
 import UserProfileFactory from './shared/user-profile/user-profile.factory';
@@ -30,6 +31,7 @@ console.log('test');
 angular.module('app', dependencies)
     .config(RoutingConfig)
 
+    .factory('HomeFactory', HomeFactory)
     .factory('AllQuestionsFactory', AllQuestionsFactory)
     .factory('SingleQuestionFactory', SingleQuestionFactory)
     .factory('UserProfileFactory', UserProfileFactory)

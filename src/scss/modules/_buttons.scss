@@ -177,4 +177,9 @@
         color: lighten($red, 15%);
     }
 
+    &:focus {
+        color: $blue-dark;
+        outline: none;
+    }     
+
 }
