@@ -1,0 +1,13 @@
+.voting
+    .voting__content
+        .voting__content__value
+            span(ng-if="(upVotes - downVotes) >= 0").text--basic {{ upVotes - downVotes }}
+            span(ng-if="(upVotes - downVotes) < 0").text--basic {{ (upVotes - downVotes) * -1 }}
+            span(ng-if="(upVotes - downVotes) >= 0").text--italic.separator--both upvotes
+            span(ng-if="(upVotes - downVotes) < 0").text--italic.separator--both downvotes
+        .voting__content__buttons
+            button(ng-click="voteUp()" ng-disabled="disableVoteUp").btn-triangle.btn-triangle--filled
+                i.icon-caret-up
+
+            button(ng-click="voteDown()" ng-disabled="disableVoteDown").btn-triangle.btn-triangle--filled
+                i.icon-caret-down

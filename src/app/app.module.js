@@ -20,13 +20,13 @@ import AllQuestionsController from './components/all-questions/all-questions.con
 import SingleQuestionController from './components/single-question/single-question.controller';
 import UserProfileController from './shared/user-profile/user-profile.controller';
 
+import VotingDirective from './shared/voting/voting.directive';
+
 const dependencies = [
     'ui.router',
     'ngPageTitle',
     'angularMoment'
 ];
-
-console.log('test');
 
 angular.module('app', dependencies)
     .config(RoutingConfig)
@@ -39,4 +39,6 @@ angular.module('app', dependencies)
     .controller('HomeController', HomeController)
     .controller('AllQuestionsController', AllQuestionsController)
     .controller('SingleQuestionController', SingleQuestionController)
-    .controller('UserProfileController', UserProfileController);
+    .controller('UserProfileController', UserProfileController)
+
+    .directive('voting', VotingDirective);    

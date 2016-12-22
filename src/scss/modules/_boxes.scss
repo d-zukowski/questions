@@ -12,14 +12,29 @@
             padding: 20px 0;
         }
 
+        .box-question__heading--single {
+            padding: 20px 0 22px;
+        }
+
             .box-question__heading--avatar {
                 @include flex;
 
             }
 
             .box-question__heading--question {
+                margin-left: 15px;
                 margin-top: -7px;
+
+                .title--single {
+                    margin-top: 7px;
+                }
+
             }
+
+            .box-question__heading--unfollow {
+                @include flex;
+                padding: 13px 0;
+            }            
 
 
     .box-question--bottom {
@@ -29,6 +44,7 @@
         .box-question__content {
             @include flex;
             height: 100%;
+           
         }
 
             .box-question__content--col {
@@ -63,3 +79,56 @@
                 margin-top: 35px;
                 @include flex(space-between, center, column);
             }
+
+            .box-question__content--text {
+                padding: 25px 0 35px 20px;
+            }
+
+            .box-question__content--voting {
+                @include flex(center, flex-start);
+                height: 100%;
+                margin-top: 25px;
+            }
+
+
+.box-comment {
+    width: 100%;
+    margin-top: 20px;
+    box-shadow: -5px -8px 10px -10px $gray-300, 10px -10px 10px -10px $gray-300;
+}
+
+    .box-comment__avatar {
+        @include flex(center, flex-start);
+        height: 100%;
+        background: $white;
+        padding: 20px 0;
+        border-right: 1px solid $gray-300;
+        border-bottom: 1px solid $gray-300;
+    }
+
+    .box-comment__content {
+        height: 100%;
+        background: $white;
+        padding: 10px 20px;
+        border-bottom: 1px solid $gray-300;
+    }
+
+    .box-comment__content--large {
+        padding: 10px 20px 30px 20px;
+    }
+
+        .box-comment__content--author {
+            @include flex(flex-start);
+        }
+
+        .box-comment__content--text {
+            padding: 8px 0;
+        }
+
+    .box-comment__voting {
+        @include flex;
+        background: $white;
+        height: 100%;
+        padding-left: 17px;
+        border-bottom: 1px solid $gray-300;
+    }

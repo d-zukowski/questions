@@ -21,16 +21,18 @@ function RoutingConfig ($stateProvider, $urlRouterProvider, $locationProvider) {
             url: '/',
             controller: 'AllQuestionsController',
             data: {
-                pageTitle: 'Questions'
+                pageTitle: 'Questions',
+                state: 'all'
             },              
             templateUrl: 'app/components/all-questions/all-questions.view.html'   
         })
         
         .state('home.singlequestion', {        
-            url: '/single-question',
+            url: '/question/:url',
             controller: 'SingleQuestionController',
             data: {
-                pageTitle: 'Single question'
+                pageTitle: 'Single question',
+                state: 'single'
             },              
             templateUrl: 'app/components/single-question/single-question.view.html'
         });        

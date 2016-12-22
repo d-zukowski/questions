@@ -6,6 +6,10 @@
     z-index: 2;
 }
 
+.header--small {
+    height: 116px;
+}
+
 .header__content {
 }
 
@@ -32,6 +36,10 @@
 
     }
 
+    .header__main--single {
+        @include flex(space-between, center);
+    }
+
         .header__main--left {
             @include flex;
             padding-bottom: 10px;
@@ -44,6 +52,10 @@
             .header__add {
                 margin-left: 25px;
                 margin-top: 5px;
+            }
+
+            .header__add--space {
+                margin-left: 39px;
             }
 
         .header__main--right {

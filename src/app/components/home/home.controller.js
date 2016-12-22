@@ -1,4 +1,4 @@
-function HomeController ($scope, moment, HomeFactory) {
+function HomeController ($scope, $rootScope, $state, moment, HomeFactory) {
     'ngInject'
 
     HomeFactory.getUsers().then(
@@ -35,9 +35,40 @@ function HomeController ($scope, moment, HomeFactory) {
         $scope.filterBy.question = $scope.searchValue;
     };
 
-    // $scope.sort = () = {
+    $scope.toUrl = (title) => {
+        return title
+            .toLowerCase()
+            .replace(/ /g,'-')
+            .replace(/[^\w-]+/g,'');
+    };
 
-    // };
+    $scope.dateToText = (date) => {
+
+        let diff = moment(moment().diff(moment(date))).format('D');
+
+        switch (diff) {
+            case 0: 
+                return 'today'
+                break;
+            case 1:
+                return 'yesterday'
+                break;
+            case 2:
+                return 'two days'
+                break;                
+            default:
+                return diff + ' days'
+        }
+
+    };
+
+    $scope.currentState = $state.current.data.state;
+
+    $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) { 
+        $scope.currentState = $state.current.data.state;
+    }); 
+
+    $scope.lastTimeDiscussed = sessionStorage.lastTimeDiscussed; 
 
 }
 

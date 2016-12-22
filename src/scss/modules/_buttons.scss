@@ -76,6 +76,7 @@
     @include flex();  
     cursor: pointer;
     border: none;
+    margin: 3px 0;
 
     i {
         font-size: 1.6rem;
@@ -87,7 +88,7 @@
 
         i {
             color: $blue-dark;
-            font-size: 2.4rem;
+            font-size: 1.1rem;
             @include transition(.2s);
         }
 
@@ -106,7 +107,15 @@
                 box-shadow: 0 0 5px $gray-600;
             }
 
-        }        
+        }     
+
+        &:disabled {
+            
+            i {
+                color: $gray-500;
+            }
+
+        }           
 
     }
 
@@ -119,11 +128,10 @@
     font-size: 1.4rem;
     font-weight: 600;
     cursor: pointer;
-    border: 1px solid $gray-500;
+    border: 1px solid $gray-300;
     @include transition(.2s);    
 
-    .action {
-        //margin-right: 4px;
+    .action-text {
         font-family: $os;
     }
 

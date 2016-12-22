@@ -195,17 +195,25 @@ $xl: 1200px;
 
 // Separators
 
-.separator-left {
+.separator--left {
     margin-left: 8px;
 } 
 
-.separator-right {
+.separator--right {
     margin-right: 8px;
 } 
 
-.separator-both {
+.separator--both {
     margin: 0 8px;
 }   
+
+.separator--dot {
+    @include size(3px);
+    display: inline-block;
+    background: $gray-500;
+    border-radius: 50%;
+    margin: 0 8px;
+}
 
 
 // Scrolling
