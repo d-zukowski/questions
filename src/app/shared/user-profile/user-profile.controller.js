@@ -1,6 +1,7 @@
-function UserProfileController ($scope) {
+function UserProfileController ($scope, $timeout) {
     'ngInject'
-    console.log('UserProfileController');
+
+
 }
 
 export default UserProfileController;

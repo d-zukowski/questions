@@ -10,12 +10,12 @@
                                     .row
                                         .col-xl-2.no-padding-left.no-padding-right
                                             .box-question__heading--avatar
-                                                .avatar.avatar--small
+                                                .avatar.avatar--small(ng-click="showUserProfile(users[question.author]['id'])")
                                                     img.avatar__img(ng-src="img/avatars/{{ question.author }}.jpg" alt="{{ users[question.author]['name'] }}")   
                                         .col-xl-10.no-padding-left  
                                             .box-question__heading--question
                                                 .author
-                                                    a(href="") {{ users[question.author]['name'] }}
+                                                    a(href="" ng-click="showUserProfile(users[question.author]['id'])") {{ users[question.author]['name'] }}
                                                     span.text--light.separator--left is asking:        
                                                 .title
                                                     a(ui-sref="home.singlequestion({ url: toUrl(question.question) })") 
@@ -38,7 +38,7 @@
 
                                         .box-question__content--col(ng-repeat="activity in question.activities")
                                             .box-question__content--activity
-                                                .avatar.avatar--small
+                                                .avatar.avatar--small(ng-click="showUserProfile(users[activity.author]['id'])")
                                                     img.avatar__img(ng-src="img/avatars/{{ activity.author }}.jpg" alt="{{ users[activity.author]['name'] }}")                                            
                                                 .action(ng-class="{'action--commented': activitiesTypes[activity.type] == 'commented', 'action--answered': activitiesTypes[activity.type] == 'answered'}")
                                                     span.text--light {{ activitiesTypes[activity.type] }}                                                                                                                                                                                            

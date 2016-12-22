@@ -36,6 +36,17 @@ h2 {
 
 }
 
+h3 {
+    color: $blue-dark;
+    font-size: 1.8rem;
+    line-height: 1.8rem;
+    font-weight: 600;
+
+    @include min-sm {
+    }  
+
+}
+
 p {
     @include font($gray-600, 1.2rem, 2rem, 400);
 }

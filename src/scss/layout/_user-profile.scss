@@ -1,0 +1,188 @@
+.modal {
+    transition: opacity .2s ease-in-out;
+}
+
+.modal--fade-out {
+    animation: fadeOut 0.2s ease-in;
+}
+
+.modal--fade-in {
+    animation: fadeIn 0.2s ease-in;
+}
+
+.modal__layer {
+    @include fixed(999);
+    @include size(100%);
+    background: rgba(0, 0, 0, .7);
+    cursor: pointer;
+}
+
+.modal__content {
+    @include flex;
+    padding: 25px 0;
+    
+}
+
+.user-profile {
+    background: $white;
+    @include sizes(850px, calc(100vh - 40px));
+    max-height: 1000px;
+    overflow-y: auto;
+    cursor: default;
+}
+
+    .user-profile__close {
+        @include flex(flex-end);
+    }
+
+        .user-profile__close--button {
+            padding: 12px 15px;
+            cursor: pointer;
+
+            i {
+                color: $gray-500;
+                font-size: 1.8rem;
+                @include transition(.2s);
+            }
+
+            &:hover {
+                i {
+                    color: $red;
+                }
+            }
+
+        }
+
+    .user-profile__user {
+        padding: 0 125px;
+    }
+
+        .user-profile__user--avatar {
+            @include flex;
+            margin-top: -5px;
+        }
+
+        .user-profile__user--name {
+            @include flex;
+            color: $blue-dark;
+            margin-top: 20px;
+        }
+
+        .user-profile__user--info {
+            @include flex(space-between);
+            margin-top: 5px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid $gray-500;
+
+            .text--light {
+                font-size: 1.35rem;
+            }
+
+        }
+
+            .user-profile__user--level {
+                position: relative;
+                top: 12px;                
+                margin-left: 5px;
+
+                i {
+                    color: $gray-300;
+                    font-size: 2.4rem;
+                }
+
+                &.level--active {
+
+                    i {
+                        color: $red-light;
+                    }
+
+                }
+
+            }        
+
+    
+
+    .user-profile__stats {
+        margin-top: 25px;
+        padding: 0 125px;
+    }
+
+        .user-profile__stats--heading {
+            @include flex(space-between);
+
+            .title {
+                font-size: 3.8rem;
+                font-family: $lora;
+                font-style: italic;
+            }
+
+        }
+
+        .user-profile__stats--user-stats {
+
+        }
+
+            .user-stats-title {
+                margin: 45px 0;
+
+                .text--light {
+                    font-size: 1.35rem;
+                    text-align: center;
+                }
+
+            }
+
+            .user-stats-boxes {
+                @include flex;
+                margin-bottom: 60px;
+            }
+
+                .user-stats-boxes__item {
+                    @include flex;
+                    @include size(90px);
+                    background: $blue-light;
+                    margin: 0 10px;
+
+                    &.rotate-10 {
+                        transform: rotate(10deg);
+
+                        .user-stats-boxes__item--content {
+                            transform: rotate(-10deg);
+                        }
+
+                    }
+
+                    &.rotate-15 {
+                        transform: rotate(-15deg);
+
+                        .user-stats-boxes__item--content {
+                            transform: rotate(15deg);
+                        }
+
+                    }
+
+                    &.rotate-35 {
+                        transform: rotate(-35deg);
+
+                        .user-stats-boxes__item--content {
+                            transform: rotate(35deg);
+                        }
+
+                    }
+
+                }
+
+                .user-stats-boxes__item--content {
+                    @include flex(center, center, column);
+
+                    .value {
+                        font-size: 2.4rem;
+                        font-weight: 700;
+                        margin-bottom: 7px;
+                    }
+
+                    .name {
+                        font-family: $lora;
+                    }
+
+                }

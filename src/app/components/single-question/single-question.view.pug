@@ -12,12 +12,12 @@
                                     .row
                                         .col-xl-2.no-padding-right
                                             .box-question__heading--avatar
-                                                .avatar.avatar--small
+                                                .avatar.avatar--small(ng-click="showUserProfile(users[singleQuestion.author]['id'])")
                                                     img.avatar__img(ng-src="img/avatars/{{ singleQuestion.author }}.jpg" alt="{{ users[singleQuestion.author]['name'] }}")   
                                         .col-xl-10.no-padding-left        
                                             .box-question__heading--question
                                                 .author
-                                                    a(href="") {{ users[singleQuestion.author]['name'] }}
+                                                    a(href="" ng-click="showUserProfile(users[singleQuestion.author]['id'])") {{ users[singleQuestion.author]['name'] }}
                                                     span.text--light.separator--left is asking:       
                                                 .title.title--single
                                                     h2 {{ singleQuestion.question }}
@@ -65,13 +65,13 @@
                                 .row.h-100
                                     .col-xl-2.no-padding-right
                                         .box-comment__avatar
-                                            .avatar.avatar--small
+                                            .avatar.avatar--small(ng-click="showUserProfile(users[answer.author]['id'])")
                                                 img.avatar__img(ng-src="img/avatars/{{ answer.author }}.jpg" alt="{{ users[answer.author]['name'] }}")
 
                                     .col-xl-10.no-padding-left
                                         .box-comment__content(ng-class="{'box-comment__content--large': !answer.comments.length}")
                                             .box-comment__content--author
-                                                a(href="") {{ users[answer.author]['name'] }}
+                                                a(href="" ng-click="showUserProfile(users[answer.author]['id'])") {{ users[answer.author]['name'] }}
                                                 span.text--light.separator--left commented it
                                                 span.separator--dot
                                                 span.text--italic {{ dateToText(answer.date) }}
@@ -94,13 +94,13 @@
                                 .row.h-100
                                     .col-xl-2.offset-xl-2.no-padding-left.no-padding-right
                                         .box-comment__avatar
-                                            .avatar.avatar--small
+                                            .avatar.avatar--small(ng-click="showUserProfile(users[comment.author]['id'])")
                                                 img.avatar__img(ng-src="img/avatars/{{ comment.author }}.jpg" alt="{{ users[comment.author]['name'] }}")
 
                                     .col-xl-8.no-padding-left
                                         .box-comment__content(ng-class="{'box-comment__content--large': $last}")
                                             .box-comment__content--author
-                                                a(href="") {{ users[comment.author]['name'] }}
+                                                a(href="" ng-click="showUserProfile(users[comment.author]['id'])") {{ users[comment.author]['name'] }}
                                                 span.text--light.separator--left commented it
                                                 span.separator--dot
                                                 span.text--italic {{ dateToText(answer.date) }}                                                

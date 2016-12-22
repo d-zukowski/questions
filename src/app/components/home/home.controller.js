@@ -1,4 +1,4 @@
-function HomeController ($scope, $rootScope, $state, moment, HomeFactory) {
+function HomeController ($scope, $rootScope, $state, $timeout, moment, HomeFactory) {
     'ngInject'
 
     HomeFactory.getUsers().then(
@@ -69,6 +69,33 @@ function HomeController ($scope, $rootScope, $state, moment, HomeFactory) {
     }); 
 
     $scope.lastTimeDiscussed = sessionStorage.lastTimeDiscussed; 
+
+    $scope.showUserProfile = (id) => {
+        $scope.user = $scope.users[id];
+        $scope.modalOpen();
+    }
+
+    $scope.modalOpen = () => {
+        document.querySelector('.header').classList.toggle('header--shadow');
+        document.querySelector('.modal').classList.toggle('modal--fade-in');
+        document.querySelector('.modal').classList.toggle('hide');        
+    };
+
+    $scope.modalClose = () => {
+        document.querySelector('.modal').classList.toggle('modal--fade-in');        
+        document.querySelector('.modal').classList.toggle('modal--fade-out');        
+        $timeout(() => {
+            document.querySelector('.modal').classList.toggle('hide');
+            document.querySelector('.header').classList.toggle('header--shadow');
+        }, 200);        
+    };
+
+    angular.element(document).ready(() => {
+        document.querySelector('.user-profile').addEventListener('click', (e) => {
+            e.stopPropagation();
+        }, false); 
+    })
+
 
 }
 

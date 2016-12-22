@@ -1,1 +1,68 @@
-//- p user-profile.pug
+.modal
+    .modal__layer(ng-click="modalClose()")
+        .modal__content
+            .user-profile
+                .user-profile__close
+                    .user-profile__close--button(ng-click="modalClose()")
+                        i.icon-cancel
+                .user-profile__user
+                    .user-profile__user--avatar
+                        .avatar.avatar--large
+                            img.avatar__img(ng-src="img/avatars/{{ user.id }}.jpg" alt="{{ user.name }}")
+
+                    .user-profile__user--name
+                            h3 {{ user.name }}
+
+                    .user-profile__user--info
+                        div
+                            span.text--light.separator--right Member for
+                            span.text--basic 5 months
+
+                        div
+                            span.text--light.separator--right Last seen
+                            span.text--basic 5 months
+
+                        div
+                            span.text--light.separator--right Activity level
+                                span.user-profile__user--level(ng-class="{'level--active': user.activityLevel >= 1}")
+                                    i.icon-level
+                                span.user-profile__user--level(ng-class="{'level--active': user.activityLevel >= 2}")
+                                    i.icon-level
+                                span.user-profile__user--level(ng-class="{'level--active': user.activityLevel >= 3}")
+                                    i.icon-level
+                
+                .user-profile__stats
+                    .user-profile__stats--heading
+                        button.btn-round.btn-round--filled
+                            i.icon-arrow-left              
+                        
+                        .title How it all started
+
+                        button.btn-round.btn-round--filled
+                            i.icon-arrow-right
+
+                    .user-profile__stats--user-stats
+                        .user-stats-title
+                            .text--light That's where We have been these 5 months ago
+                        .user-stats-boxes
+                            .user-stats-boxes__item.rotate-35
+                                .user-stats-boxes__item--content
+                                    .value 46
+                                    .name peers
+
+                            .user-stats-boxes__item.rotate-15
+                                .user-stats-boxes__item--content
+                                    .value 46
+                                    .name discussions
+
+                            .user-stats-boxes__item.rotate-35
+                                .user-stats-boxes__item--content
+                                    .value 46
+                                    .name findings
+
+                            .user-stats-boxes__item.rotate-10 
+                                .user-stats-boxes__item--content
+                                    .value 46
+                                    .name questions
+                        .user-stats-title
+                            .text--light Who joined the platform that same period
