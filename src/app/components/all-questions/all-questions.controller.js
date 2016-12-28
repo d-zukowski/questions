@@ -1,10 +1,11 @@
 function AllQuestionsController ($scope, AllQuestionsFactory) {
     'ngInject'
 
+    // Get data
+
     AllQuestionsFactory.getQuestions().then(
         (data) => {
             $scope.allQuestions = data;
-            
         }
     );
 
@@ -14,15 +15,11 @@ function AllQuestionsController ($scope, AllQuestionsFactory) {
         }
     );
 
+    // Load more
+    
     $scope.loadMoreQuestions = () => {
-        AllQuestionsFactory.getQuestions().then(
-            (data) => {
-                angular.forEach(data, (value, index) => {
-                    $scope.allQuestions.push(value);
-                });
-            }
-        );
-    };
+        $scope.questionsLimit += 3;
+    };    
 
 }
 

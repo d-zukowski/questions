@@ -45,7 +45,9 @@ gulp.task('build-clean-pug', function () {
 
 gulp.task('build-compile-pug', function () {    
     return gulp.src('src/**/*.pug', {base: 'src/'})
-        .pipe(pug())
+        .pipe(pug({
+            pretty: true
+        }))
         .pipe(gulp.dest('build'));
 });
 

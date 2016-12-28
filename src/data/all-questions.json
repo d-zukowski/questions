@@ -126,5 +126,93 @@
                 "down": 0
             }
         }
-    }     
+    },
+    {
+        "id": 2,
+        "author": 6,
+        "question": "Vegan diet in diabetes treatment?",
+        "activities": [
+            {
+                "author": 4,
+                "type": 1
+            },
+            {
+                "author": 5,
+                "type": 1
+            },
+            {
+                "author": 7,
+                "type": 1
+            },
+            {
+                "author": 3,
+                "type": 2
+            }                                                                
+        ],
+        "moreActivitiesLength": 6,
+        "stats": {
+            "discussion": [
+                {
+                    "name": "related discussion",
+                    "value": 2
+                },
+                {
+                    "name": "peers involved",
+                    "value": 9
+                },
+                {
+                    "name": "conversations",
+                    "value": 5
+                }                                                     
+            ],    
+            "votes": {
+                "up": 19,
+                "down": 0
+            }
+        }
+    },  
+    {
+        "id": 5,
+        "author": 1,
+        "question": "Will insulin make my patient gain weight?",
+        "activities": [
+            {
+                "author": 2,
+                "type": 1
+            },
+            {
+                "author": 3,
+                "type": 1
+            },
+            {
+                "author": 4,
+                "type": 1
+            },
+            {
+                "author": 5,
+                "type": 2
+            }
+        ],
+        "moreActivitiesLength": 3,
+        "stats": {
+            "discussion": [
+                {
+                    "name": "related discussion",
+                    "value": 1
+                },
+                {
+                    "name": "peers involved",
+                    "value": 6
+                },
+                {
+                    "name": "conversations",
+                    "value": 3
+                }                                                     
+            ], 
+            "votes": {
+                "up": 19,
+                "down": 0
+            }
+        }
+    }         
 ]

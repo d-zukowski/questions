@@ -1,44 +1,12 @@
-function AllQuestionsFactory ($q, $http) {
+function AllQuestionsFactory (UtilsFactory) {
     'ngInject'
 
-    let getQuestions = function () {    
-        
-        let deferred = $q.defer();
-    
-        $http({
-            method: 'GET',
-            url: '../../../data/all-questions.json'
-        }).then(
-            (response) => {
-                deferred.resolve(response.data);  
-            }, 
-            (error) => {
-                deferred.resolve(error); 
-            }         
-        ); 
-
-        return deferred.promise;
-        
+    let getQuestions = () => {
+        return UtilsFactory.ajax('../../../data/all-questions.json');
     };
 
-    let getActivitiesTypes = function () {    
-        
-        let deferred = $q.defer();
-    
-        $http({
-            method: 'GET',
-            url: '../../../data/activities-types.json'
-        }).then(
-            (response) => {
-                deferred.resolve(response.data);  
-            }, 
-            (error) => {
-                deferred.resolve(error); 
-            }         
-        ); 
-
-        return deferred.promise;
-        
+    let getActivitiesTypes = () => {
+        return UtilsFactory.ajax('../../../data/activities-types.json');
     };
 
     return {

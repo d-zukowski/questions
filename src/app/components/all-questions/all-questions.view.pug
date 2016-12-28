@@ -1,5 +1,5 @@
 .all-questions
-    .all-questions__question(ng-repeat="question in allQuestions | filter: filterBy | orderBy: sortBy : true")
+    .all-questions__question(ng-repeat="question in allQuestions | filter: filterBy | limitTo: questionsLimit | orderBy: sortBy : true")
         .row
             .col-xl-12
                 .box-question
@@ -50,6 +50,6 @@
                                                 span.text--basic {{ stat.value }}
                                                 span.text--italic.separator--left {{ stat.name }}                                                                               
 
-    .all-questions__load-more
+    .all-questions__load-more(ng-if="allQuestions.length >= questionsLimit && !filterBy.question.length && questionsLimit")
         button.btn-link(ng-click="loadMoreQuestions()")
-            | load more questions
+            | load more questions ({{ allQuestions.length - questionsLimit }})

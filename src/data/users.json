@@ -10,11 +10,17 @@
             "discussions": 29,
             "findings": 19,
             "questions": 10
-        },
+        },        
         "usersJoinedInTheSamePeroid": [2, 3, 5],
         "hottestDiscussionTheseDays": {
-            "id": 3,
-            "type": 1 
+            "author": "6",
+            "question": "Vegan diet to stop diabetes progress",
+            "stats": {
+                "peers involved": 6,
+                "related discussion": 3,
+                "conversations": 3,
+                "upvotes": 19
+            }
         }
     },
     "2": {
@@ -28,11 +34,17 @@
             "discussions": 29,
             "findings": 19,
             "questions": 10
-        },
+        },         
         "usersJoinedInTheSamePeroid": [1, 3, 5],
         "hottestDiscussionTheseDays": {
-            "id": 3,
-            "type": 1 
+            "author": "6",
+            "question": "Vegan diet to stop diabetes progress",
+            "stats": {
+                "peers involved": 6,
+                "related discussion": 3,
+                "conversations": 3,
+                "upvotes": 19
+            }
         }
     },
     "3": {
@@ -46,11 +58,17 @@
             "discussions": 29,
             "findings": 19,
             "questions": 10
-        },
+        },         
         "usersJoinedInTheSamePeroid": [1, 2, 5],
         "hottestDiscussionTheseDays": {
-            "id": 3,
-            "type": 1 
+            "author": "6",
+            "question": "Vegan diet to stop diabetes progress",
+            "stats": {
+                "peers involved": 6,
+                "related discussion": 3,
+                "conversations": 3,
+                "upvotes": 19
+            }
         }
     },
     "4": {
@@ -64,11 +82,17 @@
             "discussions": 29,
             "findings": 19,
             "questions": 10
-        },
+        },         
         "usersJoinedInTheSamePeroid": [2, 3, 5],
         "hottestDiscussionTheseDays": {
-            "id": 3,
-            "type": 1 
+            "author": "6",
+            "question": "Vegan diet to stop diabetes progress",
+            "stats": {
+                "peers involved": 6,
+                "related discussion": 3,
+                "conversations": 3,
+                "upvotes": 19
+            }
         }
     },
     "5": {
@@ -82,11 +106,17 @@
             "discussions": 29,
             "findings": 19,
             "questions": 10
-        },
+        },         
         "usersJoinedInTheSamePeroid": [1, 2, 3],
         "hottestDiscussionTheseDays": {
-            "id": 3,
-            "type": 1 
+            "author": "6",
+            "question": "Vegan diet to stop diabetes progress",
+            "stats": {
+                "peers involved": 6,
+                "related discussion": 3,
+                "conversations": 3,
+                "upvotes": 19
+            }
         }
     },
     "6": {
@@ -100,11 +130,17 @@
             "discussions": 29,
             "findings": 19,
             "questions": 10
-        },
+        },         
         "usersJoinedInTheSamePeroid": [2, 3, 5],
         "hottestDiscussionTheseDays": {
-            "id": 3,
-            "type": 1 
+            "author": "6",
+            "question": "Vegan diet to stop diabetes progress",
+            "stats": {
+                "peers involved": 6,
+                "related discussion": 3,
+                "conversations": 3,
+                "upvotes": 19
+            }
         }
     },
     "7": {
@@ -118,11 +154,17 @@
             "discussions": 29,
             "findings": 19,
             "questions": 10
-        },
+        },         
         "usersJoinedInTheSamePeroid": [2, 3, 5],
         "hottestDiscussionTheseDays": {
-            "id": 3,
-            "type": 1 
+            "author": "6",
+            "question": "Vegan diet to stop diabetes progress",
+            "stats": {
+                "peers involved": 6,
+                "related discussion": 3,
+                "conversations": 3,
+                "upvotes": 19
+            }
         }
     }                       
 }

@@ -1,20 +1,11 @@
 function RoutingConfig ($stateProvider, $urlRouterProvider, $locationProvider) {
-
     'ngInject'
 
     $stateProvider    
         .state('home', {
             url: '',
-            views: {      
-                '': {
-                    controller: 'HomeController',
-                    templateUrl: 'app/components/home/home.view.html'
-                },
-                'userProfile@home': {
-                    controller: 'UserProfileController',
-                    templateUrl: 'app/shared/user-profile/user-profile.view.html'
-                }
-            }             
+            controller: 'HomeController',
+            templateUrl: 'app/components/home/home.view.html'        
         })
 
         .state('home.allquestions', {

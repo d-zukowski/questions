@@ -1,9 +1,14 @@
 function VotingDirective () {
-    //'ngInject'
     return {
         restrict: 'E',
         replace: true,
+        scope: {
+            upVotes: '@',
+            downVotes: '@'
+        },
+        templateUrl: 'app/shared/voting/voting.view.html',        
         link: (scope, element, attrs) => {
+
             scope.voteUp = () => {
                 scope.upVotes = parseFloat(scope.upVotes) + 1;
                 
@@ -19,6 +24,7 @@ function VotingDirective () {
                 }
                 
             };
+
             scope.voteDown = () => {
                 scope.downVotes = parseFloat(scope.downVotes) + 1;
 
@@ -33,13 +39,9 @@ function VotingDirective () {
                     scope.disableVoteDown = false;
                 }                
 
-            };     
-        },
-        scope: {
-            upVotes: '@',
-            downVotes: '@'
-        },
-        templateUrl: 'app/shared/voting/voting.view.html'
+            };  
+               
+        }
     }
 }
 

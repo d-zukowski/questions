@@ -42,18 +42,18 @@
     }
 
         .box-question__content {
-            @include flex;
+            @include flex(flex-start);
             height: 100%;
            
         }
 
             .box-question__content--col {
-                width: calc(16.6666666667% - 10px);
+                width: 90px;
                 margin-right: 10px;
                 height: 100%;
 
                 &:last-child {
-                    width: 16.6666666667%;
+                    width: 90px;
                     margin-right: 0;                    
                 }
 
