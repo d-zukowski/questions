@@ -1,18 +1,18 @@
 .all-questions
     .all-questions__question(ng-repeat="question in allQuestions | filter: filterBy | limitTo: questionsLimit | orderBy: sortBy : true")
-        .row
-            .col-xl-12
+        .row.no-margin--sm
+            .col-xs-12
                 .box-question
                     .box-question--top
                         .row
-                            .col-xl-9
+                            .col-xs-12.col-lg-9
                                 .box-question__heading
                                     .row
-                                        .col-xl-2.no-padding-left.no-padding-right
+                                        .col-xs-3.col-sm-2.no-padding-left.no-padding-right
                                             .box-question__heading--avatar
                                                 .avatar.avatar--small(ng-click="showUserProfile(users[question.author]['id'])")
                                                     img.avatar__img(ng-src="img/avatars/{{ question.author }}.jpg" alt="{{ users[question.author]['name'] }}")   
-                                        .col-xl-10.no-padding-left  
+                                        .col-xs-9.col-sm-10.no-padding-left  
                                             .box-question__heading--question
                                                 .author
                                                     a(href="" ng-click="showUserProfile(users[question.author]['id'])") {{ users[question.author]['name'] }}
@@ -23,27 +23,42 @@
 
                         .box-question--bottom
                             .row
-                                .col-xl-9
+                                .col-xs-7.col-md-8.col-lg-9
                                     .box-question__content
-                                        .box-question__content--col
-                                            .box-question__content--asked
-                                                .action.action--asked
-                                                    span.text--light asked
+                                        .row.box-question__content--row
+                                            .col-xs-4.col-sm-4.col-md-3.col-lg-2.box-question__content--col.no-padding-left.hidden-xs-down
+                                                .box-question__content--asked
+                                                    .action.action--asked
+                                                        span.text--light asked
 
-                                        .box-question__content--col(ng-if="question.moreActivitiesLength")
-                                            .box-question__content--more-activites
-                                                | {{ question.moreActivitiesLength }}
-                                                .action.action--more-activites
-                                                    span.text--italic more activites
+                                            .col-xs-6.col-sm-4.col-md-3.col-lg-2.box-question__content--col(ng-if="question.moreActivitiesLength")
+                                                .box-question__content--more-activites
+                                                    .count.text--basic {{ question.moreActivitiesLength }}
+                                                    .action.action--more-activites
+                                                        span.text--italic more activites
 
-                                        .box-question__content--col(ng-repeat="activity in question.activities")
-                                            .box-question__content--activity
-                                                .avatar.avatar--small(ng-click="showUserProfile(users[activity.author]['id'])")
-                                                    img.avatar__img(ng-src="img/avatars/{{ activity.author }}.jpg" alt="{{ users[activity.author]['name'] }}")                                            
-                                                .action(ng-class="{'action--commented': activitiesTypes[activity.type] == 'commented', 'action--answered': activitiesTypes[activity.type] == 'answered'}")
-                                                    span.text--light {{ activitiesTypes[activity.type] }}                                                                                                                                                                                            
+                                            .col-xs-6.col-sm-4.col-md-3.col-lg-2.hidden-md-down.box-question__content--col(ng-repeat="activity in question.activities")
+                                                .box-question__content--activity
+                                                    .avatar.avatar--small(ng-click="showUserProfile(users[activity.author]['id'])")
+                                                        img.avatar__img(ng-src="img/avatars/{{ activity.author }}.jpg" alt="{{ users[activity.author]['name'] }}")                                            
+                                                    .action(ng-class="{'action--commented': activitiesTypes[activity.type] == 'commented', 'action--answered': activitiesTypes[activity.type] == 'answered'}")
+                                                        span.text--light {{ activitiesTypes[activity.type] }}     
+
+                                            .col-xs-6.col-sm-4.col-md-3.col-lg-2.hidden-sm-down.hidden-lg-up.box-question__content--col(ng-repeat="activity in question.activities | limitTo: 2")
+                                                .box-question__content--activity
+                                                    .avatar.avatar--small(ng-click="showUserProfile(users[activity.author]['id'])")
+                                                        img.avatar__img(ng-src="img/avatars/{{ activity.author }}.jpg" alt="{{ users[activity.author]['name'] }}")                                            
+                                                    .action(ng-class="{'action--commented': activitiesTypes[activity.type] == 'commented', 'action--answered': activitiesTypes[activity.type] == 'answered'}")
+                                                        span.text--light {{ activitiesTypes[activity.type] }}
+
+                                            .col-xs-6.col-sm-4.col-md-3.col-lg-2.hidden-md-up.box-question__content--col(ng-repeat="activity in question.activities | limitTo: 1")
+                                                .box-question__content--activity
+                                                    .avatar.avatar--small(ng-click="showUserProfile(users[activity.author]['id'])")
+                                                        img.avatar__img(ng-src="img/avatars/{{ activity.author }}.jpg" alt="{{ users[activity.author]['name'] }}")                                            
+                                                    .action(ng-class="{'action--commented': activitiesTypes[activity.type] == 'commented', 'action--answered': activitiesTypes[activity.type] == 'answered'}")
+                                                        span.text--light {{ activitiesTypes[activity.type] }}                                                                                                                                                                                                                                                                                           
                                                 
-                                .col-xl-3
+                                .col-xs-5.col-md-4.col-lg-3.no-padding-right
                                     .box-question__aside
                                         .all-questions__question--stats
                                             .stat(ng-repeat="stat in question.stats.discussion")

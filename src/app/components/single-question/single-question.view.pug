@@ -2,49 +2,54 @@
 
     .single-question__question
         .row
-            .col-xl-12
+            .col-xs-12
                 .box-question
 
                     .box-question--top
                         .row
-                            .col-xl-9.no-padding-right
+                            .col-xs-12.col-md-9.box-question__heading--left
                                 .box-question__heading.box-question__heading--single
                                     .row
-                                        .col-xl-2.no-padding-right
+                                        .col-xs-2.no-padding-right
                                             .box-question__heading--avatar
                                                 .avatar.avatar--small(ng-click="showUserProfile(users[singleQuestion.author]['id'])")
                                                     img.avatar__img(ng-src="img/avatars/{{ singleQuestion.author }}.jpg" alt="{{ users[singleQuestion.author]['name'] }}")   
-                                        .col-xl-10.no-padding-left        
+                                        .col-xs-10.no-padding-left        
                                             .box-question__heading--question
                                                 .author
                                                     a(href="" ng-click="showUserProfile(users[singleQuestion.author]['id'])") {{ users[singleQuestion.author]['name'] }}
                                                     span.text--light.separator--left is asking:       
-                                                .title.title--single
+                                                .title.title--single.hidden-sm-down  
                                                     h2 {{ singleQuestion.question }}
-                            .col-xl-3.no-padding-left
+                            .col-xs-12.col-md-3.box-question__heading--right
                                 .box-question__heading
-                                    .box-question__heading--unfollow                                               
+                                    .box-question__heading--unfollow.hidden-sm-down
                                         a(href="") unfollow
+                                    .box-question__heading--question.hidden-md-up    
+                                        .title.title--single
+                                            h2 {{ singleQuestion.question }}                                        
 
                     .box-question--bottom
                         .row
-                            .col-xl-9
+                            .col-xs-12.col-md-9
                                 .box-question__content
                                     .row
-                                        .col-xl-2.no-padding-right
+                                        .col-sm-2.hidden-sm-down.no-padding-right
                                             .box-question__content--asked
                                         
-                                        .col-xl-10.no-padding-left
+                                        .col-xs-12.col-md-10.no-padding-left
                                             .box-question__content--text
                                                 p {{ singleQuestion.text }}
-                            .col-xl-3
-                                .box-question__content
+                            .col-xs-12.col-md-3
+                                .box-question__content.box-question__content--small
+                                    .box-question__content--unfollow.hidden-md-up                                              
+                                        a(href="") unfollow                                
                                     .box-question__content--voting
                                         voting(up-votes="{{ singleQuestion.stats.votes.up }}" down-votes="{{ singleQuestion.stats.votes.down }}")
 
     .single-question__answer
         .row
-            .col-xl-12
+            .col-xs-12
                 .single-question__answer--content
                     button.btn-rectangle.btn-rectangle--dark
                         span.text-uppercase.action-text.separator--right Give
@@ -52,7 +57,7 @@
         
     .single-question__comments
         .row
-            .col-xl-12
+            .col-xs-12
                 .single-question__comments--stats
                     span.text--basic.separator--right {{ singleQuestion.answers.length }}
                     span.text--italic peers already answered {{ users[singleQuestion.author]['name'] }}
@@ -61,59 +66,82 @@
 
                     .box-comment(ng-repeat="answer in singleQuestion.answers")
                         .row
-                            .col-xl-9.no-padding-right
+                            .col-xs-12.col-sm-9.no-padding-right
                                 .row.h-100
-                                    .col-xl-2.no-padding-right
+                                    .col-xs-2.no-padding-right
                                         .box-comment__avatar
                                             .avatar.avatar--small(ng-click="showUserProfile(users[answer.author]['id'])")
                                                 img.avatar__img(ng-src="img/avatars/{{ answer.author }}.jpg" alt="{{ users[answer.author]['name'] }}")
 
-                                    .col-xl-10.no-padding-left
-                                        .box-comment__content(ng-class="{'box-comment__content--large': !answer.comments.length}")
+                                    .col-xs-9.col-sm-10.no-padding-left.no-padding-right--sm
+                                        .box-comment__content(ng-class="{'box-comment__content--large': !answer.comments.length}")                                       
                                             .box-comment__content--author
                                                 a(href="" ng-click="showUserProfile(users[answer.author]['id'])") {{ users[answer.author]['name'] }}
                                                 span.text--light.separator--left commented it
                                                 span.separator--dot
                                                 span.text--italic {{ dateToText(answer.date) }}
 
-                                            .box-comment__content--text
+                                            .box-comment__content--text.hidden-xs-down
                                                 p {{ answer.text }}
 
-                            .col-xl-3.no-padding-left
+                            .col-xs-3.no-padding-left.hidden-xs-down
                                 .box-comment__voting
                                     voting(up-votes="{{ answer.stats.votes.up }}" down-votes="{{ answer.stats.votes.down }}")
 
-                        row(ng-if="!answer.comments.length")
-                            .col-xl-12
+                        .row.hidden-sm-up
+                            .col-xs-12
+                                .box-comment__content--text
+                                    p {{ answer.text }}        
+
+                        .row.hidden-sm-up
+                            .col-xs-12
+                                .box-comment__voting
+                                    voting(up-votes="{{ answer.stats.votes.up }}" down-votes="{{ answer.stats.votes.down }}")                                        
+
+                        .row(ng-if="!answer.comments.length")
+                            .col-xs-12
                                 .single-question__answer--content
                                     button.btn-rectangle.btn-rectangle--dark
-                                        span.text-uppercase.action-text.separator--right Comment
+                                        span.text-uppercase.action-text Comment
 
                         .row(ng-repeat="comment in answer.comments")
-                            .col-xl-9.no-padding-right
-                                .row.h-100
-                                    .col-xl-2.offset-xl-2.no-padding-left.no-padding-right
-                                        .box-comment__avatar
-                                            .avatar.avatar--small(ng-click="showUserProfile(users[comment.author]['id'])")
-                                                img.avatar__img(ng-src="img/avatars/{{ comment.author }}.jpg" alt="{{ users[comment.author]['name'] }}")
+                            .col-xs-1.hidden-sm-up.no-padding
+                                .box-comment__offset
+                            .col-xs-11.col-sm-12
+                                .row                              
+                                    .col-xs-12.col-sm-9.no-padding-right
+                                        .row.h-100
+                                            .col-xs-2.offset-sm-2.no-padding-left.no-padding-right
+                                                .box-comment__avatar
+                                                    .avatar.avatar--small(ng-click="showUserProfile(users[comment.author]['id'])")
+                                                        img.avatar__img(ng-src="img/avatars/{{ comment.author }}.jpg" alt="{{ users[comment.author]['name'] }}")
 
-                                    .col-xl-8.no-padding-left
-                                        .box-comment__content(ng-class="{'box-comment__content--large': $last}")
-                                            .box-comment__content--author
-                                                a(href="" ng-click="showUserProfile(users[comment.author]['id'])") {{ users[comment.author]['name'] }}
-                                                span.text--light.separator--left commented it
-                                                span.separator--dot
-                                                span.text--italic {{ dateToText(answer.date) }}                                                
+                                            .col-xs-9.col-sm-8.no-padding-left.no-padding-right--sm
+                                                .box-comment__content(ng-class="{'box-comment__content--large': $last}")
+                                                    .box-comment__content--author
+                                                        a(href="" ng-click="showUserProfile(users[comment.author]['id'])") {{ users[comment.author]['name'] }}
+                                                        span.text--light.separator--left commented it
+                                                        span.separator--dot
+                                                        span.text--italic {{ dateToText(answer.date) }}                                                
 
-                                            .box-comment__content--text
-                                                p {{ answer.text }}
+                                                    .box-comment__content--text.hidden-xs-down
+                                                        p {{ comment.text }}
 
-                            .col-xl-3.no-padding-left
-                                .box-comment__voting
-                                    voting(up-votes="{{ comment.stats.votes.up }}" down-votes="{{ comment.stats.votes.down }}")        
+                                    .col-xs-3.hidden-xs-down.no-padding-left
+                                        .box-comment__voting
+                                            voting(up-votes="{{ comment.stats.votes.up }}" down-votes="{{ comment.stats.votes.down }}") 
+
+                                    .col-xs-12.hidden-sm-up.no-padding-left--sm
+                                        .box-comment__content--text
+                                            p {{ comment.text }}     
+
+                                    .col-xs-12.hidden-sm-up.no-padding-left--sm
+                                        .box-comment__voting
+                                            voting(up-votes="{{ comment.stats.votes.up }}" down-votes="{{ comment.stats.votes.down }}") 
+
 
                         .row(ng-if="answer.comments.length")
-                            .col-xl-12
+                            .col-xs-12
                                 .single-question__answer--content
                                     button.btn-rectangle.btn-rectangle--dark
                                         span.text-uppercase.action-text.separator--right Continue

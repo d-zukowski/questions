@@ -4,13 +4,13 @@ header.header(ng-class="{'header--small': currentState == 'single'}")
 
             .header__content--top
                 .row
-                    .col-xl-2
+                    .col-xs-2.col-sm-2.col-md-1.col-lg-1.col-xl-2
                         .header__aside
                             .header__back
                                 a.btn-round.btn-round--large.btn-round--linear(ui-sref="home.allquestions")
                                     i.icon-arrow-left
 
-                    .col-xl-8
+                    .col-xs-10.col-sm-10.col-md-11.col-lg-10.col-xl-8
                         .header__main(ng-class="{'header__main--single': currentState == 'single'}")
                             .header__main--left
                                 .header__logo
@@ -43,14 +43,14 @@ header.header(ng-class="{'header--small': currentState == 'single'}")
                                     span.separator--left
                                         a(href="" ng-click="sortQuestions('hot')" ng-class="{'active': sortBy == 'moreActivitiesLength'}") hot
 
-                            .header__main--right(ng-if="currentState == 'single'")
+                            .header__main--right.hidden-xs-down(ng-if="currentState == 'single'")
                                 span.text--italic Last time discussed 
                                 span.text--italic.separator--both {{ lastTimeDiscussed }} 
-                                span.text--italic ago
+                                span.text--italic ago             
 
             .header__content--bottom(ng-if="currentState == 'all'")
                 .row
-                    .col-xl-8.offset-xl-2         
+                    .col-xs-12.col-lg-10.offset-lg-1.col-xl-8.offset-xl-2  
                         .header__search
                             .header__search--input
                                 input.input(type="text" placeholder="Search questions" ng-model="searchData.query")

@@ -1,5 +1,5 @@
 .btn-round {
-    @include size(26px);
+    @include size(22px);
     @include flex();  
     cursor: pointer;
     border: none;
@@ -7,22 +7,42 @@
     @include transition(.2s);
 
     i {
-        font-size: 1.6rem;
-        line-height: 1.6rem;
+        font-size: 1.2rem;
+        line-height: 1.2rem;
 
         &.icon-arrow-left {
             margin-left: -3px;
         }
 
+        @include min-sm {
+            font-size: 1.6rem;
+            line-height: 1.6rem;
+
+            &.icon-arrow-left {
+                margin-left: -2px;
+            }
+
+        }
+
     }    
 
     &--large {
-        @include size(40px);
+        @include size(30px);
         line-height: 40px;
 
+        @include min-sm {
+            @include size(40px);
+
+            i {
+                font-size: 2.6rem;
+                line-height: 2.6rem;            
+            }
+
+        }
+
         i {
-            font-size: 2.6rem;
-            line-height: 2.6rem;
+            font-size: 2rem;
+            line-height: 2rem;
         }
 
     }
@@ -122,14 +142,20 @@
 }
 
 .btn-rectangle {
-    @include sizes(182px, 36px);
+    @include sizes(auto, 36px);
     @include flex(center, baseline);
     background: $white;
     font-size: 1.4rem;
     font-weight: 600;
     cursor: pointer;
     border: 1px solid $gray-300;
-    @include transition(.2s);    
+    white-space: nowrap;
+    @include transition(.2s);
+    display: inline-block;
+
+    @include min-sm {
+        @include sizes(182px, 36px);
+    }    
 
     .action-text {
         font-family: $os;

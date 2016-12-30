@@ -10,12 +10,21 @@
 
         .all-questions__question--stats {
             @include flex(space-between, flex-start, column);
-            margin-top: 35px;
+            margin-top: 20px;
             height: 155px;
 
+            @include min-sm {
+                margin-top: 35px;                   
+            }
+
             .stat {
-                margin-left: 30px;
                 margin-bottom: 35px;
+                white-space: nowrap;
+
+                @include min-lg {
+                    margin-left: 30px;                    
+                }
+
             }
 
         }

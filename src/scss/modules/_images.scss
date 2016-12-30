@@ -15,8 +15,12 @@
     }
 
     &--small {
-        @include size(50px);
+        @include size(36px);
         cursor: pointer;
+
+        @include min-sm {
+            @include size(50px);
+        }
 
         &:hover {
 
