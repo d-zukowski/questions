@@ -2,14 +2,14 @@
     .voting__content
 
         .voting__content--value
-            span(ng-if="(upVotes - downVotes) >= 0").text--basic {{ upVotes - downVotes }}
-            span(ng-if="(upVotes - downVotes) < 0").text--basic {{ (upVotes - downVotes) * -1 }}
-            span(ng-if="(upVotes - downVotes) >= 0").text--italic.separator--both upvotes
-            span(ng-if="(upVotes - downVotes) < 0").text--italic.separator--both downvotes
+            span(data-ng-if="(upVotes - downVotes) >= 0").text--basic {{ upVotes - downVotes }}
+            span(data-ng-if="(upVotes - downVotes) < 0").text--basic {{ (upVotes - downVotes) * -1 }}
+            span(data-ng-if="(upVotes - downVotes) >= 0").text--italic.separator--both upvotes
+            span(data-ng-if="(upVotes - downVotes) < 0").text--italic.separator--both downvotes
             
         .voting__content--buttons
-            button(ng-click="voteUp()" ng-disabled="disableVoteUp").btn-triangle.btn-triangle--filled
+            button(data-ng-click="voteUp()" data-ng-disabled="disableVoteUp").btn-triangle.btn-triangle--filled
                 i.icon-caret-up
 
-            button(ng-click="voteDown()" ng-disabled="disableVoteDown").btn-triangle.btn-triangle--filled
+            button(data-ng-click="voteDown()" data-ng-disabled="disableVoteDown").btn-triangle.btn-triangle--filled
                 i.icon-caret-down

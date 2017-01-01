@@ -1,11 +1,14 @@
 function HomeController ($scope, $rootScope, $state, $timeout, HomeFactory) {
     'ngInject'
 
+    $scope.loading = true;
+
     // Get data
 
     HomeFactory.getUsers().then(
         (data) => {
             $scope.users = data;
+            $scope.loading = false;
         }
     );
 
@@ -24,7 +27,7 @@ function HomeController ($scope, $rootScope, $state, $timeout, HomeFactory) {
     $scope.currentState = $state.current.data.state;
 
     $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) { 
-        $scope.currentState = $state.current.data.state;
+        $scope.currentState = $state.current.data.state;        
         window.scrollTo(0,0);
     }); 
 

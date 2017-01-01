@@ -1,4 +1,4 @@
-function SingleQuestionController ($scope, $stateParams, moment, SingleQuestionFactory) {
+function SingleQuestionController ($scope, $rootScope, $stateParams, moment, SingleQuestionFactory) {
     'ngInject'
 
     // Get data
@@ -10,10 +10,10 @@ function SingleQuestionController ($scope, $stateParams, moment, SingleQuestionF
             // Get "last time discussed" date
 
             angular.forEach(data.answers, (answerValue, answerKey) => {
-                if (answerValue.comments.length) {                    
-                    sessionStorage.setItem('lastTimeDiscussed', moment(answerValue.comments[0].date).fromNow(true));
+                if (answerValue.comments.length) {    
+                    $rootScope.lastTimeDiscussed = moment(answerValue.comments[0].date).fromNow(true);                
                 } else {
-                    sessionStorage.setItem('lastTimeDiscussed', moment(answerValue[0].date).fromNow(true));
+                    $rootScope.lastTimeDiscussed = moment(answerValue[0].date).fromNow(true);
                 }
             });
 

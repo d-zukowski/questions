@@ -1,6 +1,6 @@
 .modal.hide
 
-    .modal__layer(ng-click="modalClose()")
+    .modal__layer(data-ng-click="modalClose()")
         .modal__content
 
             //- User profile
@@ -11,7 +11,7 @@
 
                         //- User profile - close
                         .user-profile__close
-                            .user-profile__close--button(ng-click="modalClose()")
+                            .user-profile__close--button(data-ng-click="modalClose()")
                                 i.icon-cancel
 
                 .row.no-margin
@@ -22,7 +22,7 @@
 
                             .user-profile__user--avatar
                                 .avatar.avatar--large
-                                    img.avatar__img(ng-src="img/avatars/{{ user.id }}.jpg" alt="{{ user.name }}")
+                                    img.avatar__img(data-ng-src="img/avatars/{{ user.id }}.jpg" alt="{{ user.name }}")
 
                             .user-profile__user--name
                                     h3 {{ user.name }}
@@ -39,11 +39,11 @@
                                 .user-profile__user--info-item
                                     span.text--light.separator--right Activity level
                                     span
-                                        span.user-profile__user--level(ng-class="{'level--active': user.activityLevel >= 1}")
+                                        span.user-profile__user--level(data-ng-class="{'level--active': user.activityLevel >= 1}")
                                             i.icon-level
-                                        span.user-profile__user--level(ng-class="{'level--active': user.activityLevel >= 2}")
+                                        span.user-profile__user--level(data-ng-class="{'level--active': user.activityLevel >= 2}")
                                             i.icon-level
-                                        span.user-profile__user--level(ng-class="{'level--active': user.activityLevel >= 3}")
+                                        span.user-profile__user--level(data-ng-class="{'level--active': user.activityLevel >= 3}")
                                             i.icon-level
                 
                 .row.no-margin
@@ -95,12 +95,12 @@
 
                                 .users-stats__boxes
 
-                                    .users-stats__box(ng-repeat="item in user.usersJoinedInTheSamePeroid")
+                                    .users-stats__box(data-ng-repeat="item in user.usersJoinedInTheSamePeroid")
                                         .users-stats__box--avatar
-                                            .avatar.avatar--small(ng-click="showUserProfile(users[item]['id'])")
-                                                img.avatar__img(ng-src="img/avatars/{{ item }}.jpg" alt="{{ users[item]['name'] }}")
+                                            .avatar.avatar--small.avatar--small--no-xs(data-ng-click="showUserProfile(users[item]['id'])")
+                                                img.avatar__img(data-ng-src="img/avatars/{{ item }}.jpg" alt="{{ users[item]['name'] }}")
                                         .users-stats__box--name
-                                                a(href="" ng-click="showUserProfile(users[item]['id'])") {{ users[item]['name'] }}
+                                                a(href="" data-ng-click="showUserProfile(users[item]['id'])") {{ users[item]['name'] }}
 
                 
                 .row.no-margin
@@ -114,16 +114,16 @@
 
                             .discussion__content
                                 .discussion__content--avatar
-                                    .avatar.avatar--small(ng-click="showUserProfile(users[user.hottestDiscussionTheseDays.author]['id'])")
-                                        img.avatar__img(ng-src="img/avatars/{{ user.hottestDiscussionTheseDays.author }}.jpg" alt="{{ users[user.hottestDiscussionTheseDays.author]['name'] }}")                            
+                                    .avatar.avatar--small.avatar--small--no-xs(data-ng-click="showUserProfile(users[user.hottestDiscussionTheseDays.author]['id'])")
+                                        img.avatar__img(data-ng-src="img/avatars/{{ user.hottestDiscussionTheseDays.author }}.jpg" alt="{{ users[user.hottestDiscussionTheseDays.author]['name'] }}")                            
 
                                 .discussion__content--article
-                                    a(href="" ng-click="showUserProfile(users[user.hottestDiscussionTheseDays.author]['id'])") {{ users[user.hottestDiscussionTheseDays.author]['name'] }}
+                                    a(href="" data-ng-click="showUserProfile(users[user.hottestDiscussionTheseDays.author]['id'])") {{ users[user.hottestDiscussionTheseDays.author]['name'] }}
                                     span.text--light.separator--left found the guardian article
-                                    a(ui-sref="home.singlequestion({ url: toUrl(user.hottestDiscussionTheseDays.question) })" ng-click="modalClose()")
+                                    a(ui-sref="home.singlequestion({ url: toUrl(user.hottestDiscussionTheseDays.question) })" data-ng-click="modalClose()")
                                         h2 {{ user.hottestDiscussionTheseDays.question }}
 
                                 .discussion__content--stats
-                                    .discussion__content--stat(ng-repeat="(statKey, statValue) in user.hottestDiscussionTheseDays.stats")
+                                    .discussion__content--stat(data-ng-repeat="(statKey, statValue) in user.hottestDiscussionTheseDays.stats")
                                         span.text--basic.separator--right {{ statValue }}
                                         span.text--italic {{ statKey }}

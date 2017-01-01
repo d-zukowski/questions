@@ -17,13 +17,13 @@
                                         .col-xs-2.no-padding-right
 
                                             .box-question__heading--avatar
-                                                .avatar.avatar--small(ng-click="showUserProfile(users[singleQuestion.author]['id'])")
-                                                    img.avatar__img(ng-src="img/avatars/{{ singleQuestion.author }}.jpg" alt="{{ users[singleQuestion.author]['name'] }}")   
+                                                .avatar.avatar--small(data-ng-click="showUserProfile(users[singleQuestion.author]['id'])")
+                                                    img.avatar__img(data-ng-src="img/avatars/{{ singleQuestion.author }}.jpg" alt="{{ users[singleQuestion.author]['name'] }}")   
                                        
                                         .col-xs-10.no-padding-left        
                                             .box-question__heading--question
                                                 .author
-                                                    a(href="" ng-click="showUserProfile(users[singleQuestion.author]['id'])") {{ users[singleQuestion.author]['name'] }}
+                                                    a(href="" data-ng-click="showUserProfile(users[singleQuestion.author]['id'])") {{ users[singleQuestion.author]['name'] }}
                                                     span.text--light.separator--left is asking:       
                                                 .title.title--single.hidden-sm-down  
                                                     h2 {{ singleQuestion.question }}
@@ -61,7 +61,7 @@
                                         a(href="") unfollow
 
                                     .box-question__content--voting
-                                        voting(up-votes="{{ singleQuestion.stats.votes.up }}" down-votes="{{ singleQuestion.stats.votes.down }}")
+                                        voting(data-up-votes="{{ singleQuestion.stats.votes.up }}" data-down-votes="{{ singleQuestion.stats.votes.down }}")
 
     //- Question - answer button
     .single-question__answer
@@ -86,7 +86,7 @@
                 //- Comments - list
                 .single-question__comments--list
 
-                    .box-comment(ng-repeat="answer in singleQuestion.answers")
+                    .box-comment(data-ng-repeat="answer in singleQuestion.answers")
                         .row
                             .col-xs-12.col-sm-9.no-padding-right
 
@@ -94,12 +94,12 @@
                                     .col-xs-2.no-padding-right
 
                                         .box-comment__avatar
-                                            .avatar.avatar--small(ng-click="showUserProfile(users[answer.author]['id'])")
-                                                img.avatar__img(ng-src="img/avatars/{{ answer.author }}.jpg" alt="{{ users[answer.author]['name'] }}")
+                                            .avatar.avatar--small(data-ng-click="showUserProfile(users[answer.author]['id'])")
+                                                img.avatar__img(data-ng-src="img/avatars/{{ answer.author }}.jpg" alt="{{ users[answer.author]['name'] }}")
 
                                     .col-xs-9.col-sm-10.no-padding-left.no-padding-right--sm
 
-                                        .box-comment__content(ng-class="{'box-comment__content--large': !answer.comments.length}")        
+                                        .box-comment__content(data-ng-class="{'box-comment__content--large': !answer.comments.length}")        
 
                                             .box-comment__content--author
                                                 a(href="" ng-click="showUserProfile(users[answer.author]['id'])") {{ users[answer.author]['name'] }}
@@ -113,7 +113,7 @@
                             .col-xs-3.no-padding-left.hidden-xs-down
 
                                 .box-comment__voting
-                                    voting(up-votes="{{ answer.stats.votes.up }}" down-votes="{{ answer.stats.votes.down }}")
+                                    voting(data-up-votes="{{ answer.stats.votes.up }}" data-down-votes="{{ answer.stats.votes.down }}")
 
                         .row.hidden-sm-up
                             .col-xs-12
@@ -125,16 +125,16 @@
                             .col-xs-12
 
                                 .box-comment__voting
-                                    voting(up-votes="{{ answer.stats.votes.up }}" down-votes="{{ answer.stats.votes.down }}")                                        
+                                    voting(data-up-votes="{{ answer.stats.votes.up }}" data-down-votes="{{ answer.stats.votes.down }}")                                        
 
-                        .row(ng-if="!answer.comments.length")
+                        .row(data-ng-if="!answer.comments.length")
                             .col-xs-12
 
                                 .single-question__answer--content
                                     button.btn-rectangle.btn-rectangle--dark
                                         span.text-uppercase.action-text Comment
 
-                        .row(ng-repeat="comment in answer.comments")
+                        .row(data-ng-repeat="comment in answer.comments")
                             .col-xs-1.hidden-sm-up.no-padding
                                 .box-comment__offset
 
@@ -146,15 +146,15 @@
                                             .col-xs-2.offset-sm-2.no-padding-left.no-padding-right
 
                                                 .box-comment__avatar
-                                                    .avatar.avatar--small(ng-click="showUserProfile(users[comment.author]['id'])")
-                                                        img.avatar__img(ng-src="img/avatars/{{ comment.author }}.jpg" alt="{{ users[comment.author]['name'] }}")
+                                                    .avatar.avatar--small(data-ng-click="showUserProfile(users[comment.author]['id'])")
+                                                        img.avatar__img(data-ng-src="img/avatars/{{ comment.author }}.jpg" alt="{{ users[comment.author]['name'] }}")
 
                                             .col-xs-9.col-sm-8.no-padding-left.no-padding-right--sm
 
-                                                .box-comment__content(ng-class="{'box-comment__content--large': $last}")
+                                                .box-comment__content(data-ng-class="{'box-comment__content--large': $last}")
 
                                                     .box-comment__content--author
-                                                        a(href="" ng-click="showUserProfile(users[comment.author]['id'])") {{ users[comment.author]['name'] }}
+                                                        a(href="" data-ng-click="showUserProfile(users[comment.author]['id'])") {{ users[comment.author]['name'] }}
                                                         span.text--light.separator--left commented it
                                                         span.separator--dot
                                                         span.text--italic {{ dateToText(answer.date) }}                                                
@@ -165,7 +165,7 @@
                                     .col-xs-3.hidden-xs-down.no-padding-left
 
                                         .box-comment__voting
-                                            voting(up-votes="{{ comment.stats.votes.up }}" down-votes="{{ comment.stats.votes.down }}") 
+                                            voting(data-up-votes="{{ comment.stats.votes.up }}" data-down-votes="{{ comment.stats.votes.down }}") 
 
                                     .col-xs-12.hidden-sm-up.no-padding-left--sm
 
@@ -175,10 +175,10 @@
                                     .col-xs-12.hidden-sm-up.no-padding-left--sm
 
                                         .box-comment__voting
-                                            voting(up-votes="{{ comment.stats.votes.up }}" down-votes="{{ comment.stats.votes.down }}") 
+                                            voting(data-up-votes="{{ comment.stats.votes.up }}" data-down-votes="{{ comment.stats.votes.down }}") 
 
 
-                        .row(ng-if="answer.comments.length")
+                        .row(data-ng-if="answer.comments.length")
                             .col-xs-12
 
                                 .single-question__answer--content

@@ -65,8 +65,10 @@
 
     &__main {
         @include flex(center, flex-start, column);
+        position: relative;
 
         @include min-md {
+            position: static;
             justify-content: space-between;
             align-items: flex-end;
             flex-flow: row nowrap;
@@ -101,8 +103,13 @@
     }    
 
     &__add {
-        margin-top: 5px;
-        margin-left: 25px;        
+        @include absolute (1, 0, 0, null, null);
+
+        @include min-md {
+            position: static;
+            margin-top: 5px;
+            margin-left: 25px;            
+        }    
 
         &--space {
             margin-left: 37px;
@@ -117,9 +124,7 @@
 
     &__filters {
         @include flex;        
-        margin-top: 10px;
-        margin-bottom: 3px;
-        margin-left: 18px;
+        margin: 10px 0 3px 18px;
 
         @include min-sm {
             margin-top: 0;

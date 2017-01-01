@@ -6,6 +6,10 @@
     cursor: pointer;
     @include transition(.2s);
 
+    @include min-sm {
+        @include size(30px);
+    }
+
     i {
         font-size: 1.2rem;
         line-height: 1.2rem;
@@ -22,6 +26,18 @@
                 margin-left: -2px;
             }
 
+        }
+
+    }    
+
+    &--small {
+        @include size(26px);
+        
+        line-height: 2.6rem;
+
+        i {
+            font-size: 1.4rem;
+            line-height: 2rem;
         }
 
     }    

@@ -26,7 +26,7 @@ h3 {
 }
 
 p {
-    @include font($gray-600, 1.2rem, 2rem, 400);
+    @include font($gray-600, 1.2rem, 1.8rem, 400);
 }
 
 .text--basic {

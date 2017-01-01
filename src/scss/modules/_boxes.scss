@@ -1,8 +1,7 @@
 .box-question {
     width: 100%;
 
-    &__heading {
-        height: 92px;
+    &__heading {        
         background: $blue-light;
         padding: 20px 5px;
 
@@ -10,11 +9,15 @@
             padding: 20px 0;
         }
 
-        &--single {
+        @include min-md {
             height: 92px;
+        }
+
+        &--single {            
             padding: 20px 0 5px 0;
 
             @include min-md {
+                height: 92px;
                 padding: 20px 0 22px;
             }
 
@@ -67,7 +70,7 @@
 
         &--unfollow {
             @include flex;
-            padding: 13px 0;
+            padding: 18px 0;
         }  
 
     }
@@ -90,7 +93,7 @@
 
         &--asked {
             @include flex(flex-end, center, column);
-            @include sizes(90px, 100%);
+            @include sizes(90px, 190px);
             background: $blue-light;
             padding: 0 10px;
         }
@@ -134,7 +137,7 @@
             padding: 10px 10px 0 20px;
 
             @include min-md {
-                padding: 25px 0 35px 35px;
+                padding: 25px 0 40px 20px;
             }
 
         }
@@ -146,7 +149,8 @@
             @include min-md {
                 @include flex(center, flex-start);
                 height: 100%;
-                margin-top: 25px;
+                margin-top: 10px;
+                margin-left: 15px;                
             }
 
         }
@@ -200,11 +204,11 @@
     &__content {
         height: 100%;
         background: $white;        
-        padding: 10px 6px;
+        padding: 15px 6px;
         border-bottom: 1px solid $gray-300;
 
         @include min-sm {
-            padding: 10px 20px;
+            padding: 15px 20px;
         }
 
         &--large {

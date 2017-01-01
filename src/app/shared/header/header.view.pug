@@ -1,4 +1,4 @@
-header.header(ng-class="{'header--small': currentState == 'single'}")
+header.header(data-ng-class="{'header--small': currentState == 'single'}")
     .container
 
         .header__content
@@ -14,27 +14,27 @@ header.header(ng-class="{'header--small': currentState == 'single'}")
 
                     .col-xs-10.col-sm-10.col-md-11.col-lg-10.col-xl-8
 
-                        .header__main(ng-class="{'header__main--single': currentState == 'single'}")
+                        .header__main(data-ng-class="{'header__main--single': currentState == 'single'}")
 
                             .header__main--left
                                 .header__logo
                                     a(href="/")
-                                         h1(ng-if="currentState == 'all'") Questions
-                                         h1(ng-if="currentState == 'single'") Question
-                                .header__add(ng-class="{'header__add--space': currentState == 'single'}")
-                                    button.btn-round.btn-round--filled
+                                         h1(data-ng-if="currentState == 'all'") Questions
+                                         h1(data-ng-if="currentState == 'single'") Question
+                                .header__add(data-ng-class="{'header__add--space': currentState == 'single'}")
+                                    button.btn-round.btn-round--small.btn-round--filled
                                         i.icon-plus
 
-                            .header__main--right(ng-if="currentState == 'all'")
+                            .header__main--right(data-ng-if="currentState == 'all'")
                                 .header__filters
                                     .radio
-                                        input(type="radio" id="radio1" name="radio" ng-model="filterBy.author" value="{{ loggedUserID }}")
+                                        input(type="radio" id="radio1" name="radio" data-ng-model="filterBy.author" value="{{ loggedUserID }}")
                                         label(for="radio1")
                                             span
                                             | My shelf
 
                                     .radio
-                                        input(type="radio" id="radio2" name="radio" ng-model="filterBy.author" value="" selected)
+                                        input(type="radio" id="radio2" name="radio" data-ng-model="filterBy.author" value="" selected)
                                         label(for="radio2")
                                             span
                                             | All questions
@@ -42,23 +42,23 @@ header.header(ng-class="{'header--small': currentState == 'single'}")
                                 .header__sort
                                     span.text--italic Sort by:
                                     span.separator--both
-                                        a(href="" ng-click="sortQuestions('recent')" ng-class="{'active': sortBy == 'id'}") recent
+                                        a(href="" data-ng-click="sortQuestions('recent')" data-ng-class="{'active': sortBy == 'id'}") recent
                                     span.text--italic or
                                     span.separator--left
-                                        a(href="" ng-click="sortQuestions('hot')" ng-class="{'active': sortBy == 'moreActivitiesLength'}") hot
+                                        a(href="" data-ng-click="sortQuestions('hot')" data-ng-class="{'active': sortBy == 'moreActivitiesLength'}") hot
 
-                            .header__main--right.hidden-xs-down(ng-if="currentState == 'single'")
+                            .header__main--right.hidden-sm-down(data-ng-if="currentState == 'single'")
                                 span.text--italic Last time discussed 
                                 span.text--italic.separator--both {{ lastTimeDiscussed }} 
                                 span.text--italic ago             
 
-            .header__content--bottom(ng-if="currentState == 'all'")
+            .header__content--bottom(data-ng-if="currentState == 'all'")
                 .row
                     .col-xs-12.col-lg-10.offset-lg-1.col-xl-8.offset-xl-2  
                     
                         .header__search
                             .header__search--input
-                                input.input(type="text" placeholder="Search questions" ng-model="searchData.query")
+                                input.input(type="text" placeholder="Search questions" data-ng-model="searchData.query")
                             .header__search--button
-                                button.btn-rectangle.btn-rectangle--light(ng-click="search()")
+                                button.btn-rectangle.btn-rectangle--light(data-ng-click="search()")
                                     span.text-uppercase Search

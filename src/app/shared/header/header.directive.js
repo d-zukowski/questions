@@ -16,7 +16,6 @@ function HeaderDirective () {
             scope.searchData = {
                 query: ''
             };
-            scope.lastTimeDiscussed = sessionStorage.lastTimeDiscussed;
 
             // Filter
 

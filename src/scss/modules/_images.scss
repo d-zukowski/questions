@@ -31,6 +31,10 @@
 
         } 
 
+        &--no-xs {
+            @include size(50px);
+        }
+
     }
 
     &--large {

@@ -1,0 +1,53 @@
+@mixin loading-circle ($circle-color, $size) {
+    background: transparent;
+    border-radius: 50%;
+
+    @keyframes loading {
+        0% {
+            box-shadow: inset 0 0 0 100px $circle-color;
+            opacity: 0;
+            @include size($size);                    
+        }
+        25% {
+            box-shadow: inset 0 0 0 100px $circle-color;
+        }
+        35% {
+            box-shadow: inset 0 0 0 8px $circle-color;
+        }                
+        45% {
+            box-shadow: inset 0 0 0 5px $circle-color;
+            opacity: 1;
+            @include size($size * 1.5);               
+        }                 
+        65% {
+            box-shadow: inset 0 0 0 1px $circle-color;
+        }                
+        100% {
+            box-shadow: inset 0 0 0 0px $circle-color;
+            opacity: .05;
+            @include size($size * 4);
+        }
+    }
+
+    animation-name: loading;
+    animation-duration: .9s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+
+}
+
+.preloader-main {
+    @include fixed(9999);
+    @include size(100%);
+    @include flex;
+    background: $yellow;
+
+    &__loading {
+
+        &__circle {
+            @include loading-circle($blue-dark, 36px);
+        }
+
+    }
+
+}
