@@ -1,13 +1,25 @@
 .modal.hide
+
     .modal__layer(ng-click="modalClose()")
         .modal__content
+
+            //- User profile
             .user-profile
-                .user-profile__close
-                    .user-profile__close--button(ng-click="modalClose()")
-                        i.icon-cancel
+
+                .row.no-margin
+                    .col-xs-12
+
+                        //- User profile - close
+                        .user-profile__close
+                            .user-profile__close--button(ng-click="modalClose()")
+                                i.icon-cancel
+
                 .row.no-margin
                     .col-xs-12.col-md-10.offset-md-1
+
+                        //- User profile - user info
                         .user-profile__user
+
                             .user-profile__user--avatar
                                 .avatar.avatar--large
                                     img.avatar__img(ng-src="img/avatars/{{ user.id }}.jpg" alt="{{ user.name }}")
@@ -36,7 +48,10 @@
                 
                 .row.no-margin
                     .col-xs-12.col-md-10.offset-md-1
+
+                        //- User profile - stats
                         .user-profile__stats
+
                             .user-profile__stats--heading
                                 button.btn-round.btn-round--filled
                                     i.icon-arrow-left              
@@ -47,9 +62,12 @@
                                     i.icon-arrow-right
 
                             .user-profile__stats--user-stats
+
                                 .user-stats__title
                                     .text--light That's where We have been these 5 months ago
+
                                 .user-stats__boxes
+
                                     .user-stats__box.rotate-35
                                         .user-stats__box--content
                                             .value {{ user.stats.peers }}
@@ -71,9 +89,12 @@
                                             .name questions
 
                             .user-profile__stats--users-stats
+
                                 .users-stats__title
                                     .text--light Who joined the platform that same period
+
                                 .users-stats__boxes
+
                                     .users-stats__box(ng-repeat="item in user.usersJoinedInTheSamePeroid")
                                         .users-stats__box--avatar
                                             .avatar.avatar--small(ng-click="showUserProfile(users[item]['id'])")
@@ -81,22 +102,28 @@
                                         .users-stats__box--name
                                                 a(href="" ng-click="showUserProfile(users[item]['id'])") {{ users[item]['name'] }}
 
-                .user-profile__discussion 
-                    .discussion__title
-                        .text--light The hottest discussion these days
+                
+                .row.no-margin
+                    .col-xs-12.no-padding
 
-                    .discussion__content
-                        .discussion__content--avatar
-                            .avatar.avatar--small(ng-click="showUserProfile(users[user.hottestDiscussionTheseDays.author]['id'])")
-                                img.avatar__img(ng-src="img/avatars/{{ user.hottestDiscussionTheseDays.author }}.jpg" alt="{{ users[user.hottestDiscussionTheseDays.author]['name'] }}")                            
+                        //- User profile - discussion
+                        .user-profile__discussion
 
-                        .discussion__content--article
-                            a(href="" ng-click="showUserProfile(users[user.hottestDiscussionTheseDays.author]['id'])") {{ users[user.hottestDiscussionTheseDays.author]['name'] }}
-                            span.text--light.separator--left found the guardian article
-                            a(ui-sref="home.singlequestion({ url: toUrl(user.hottestDiscussionTheseDays.question) })" ng-click="modalClose()")
-                                h2 {{ user.hottestDiscussionTheseDays.question }}
+                            .discussion__title
+                                .text--light The hottest discussion these days
 
-                        .discussion__content--stats
-                            .discussion__content--stat(ng-repeat="(statKey, statValue) in user.hottestDiscussionTheseDays.stats")
-                                span.text--basic.separator--right {{ statValue }}
-                                span.text--italic {{ statKey }}
+                            .discussion__content
+                                .discussion__content--avatar
+                                    .avatar.avatar--small(ng-click="showUserProfile(users[user.hottestDiscussionTheseDays.author]['id'])")
+                                        img.avatar__img(ng-src="img/avatars/{{ user.hottestDiscussionTheseDays.author }}.jpg" alt="{{ users[user.hottestDiscussionTheseDays.author]['name'] }}")                            
+
+                                .discussion__content--article
+                                    a(href="" ng-click="showUserProfile(users[user.hottestDiscussionTheseDays.author]['id'])") {{ users[user.hottestDiscussionTheseDays.author]['name'] }}
+                                    span.text--light.separator--left found the guardian article
+                                    a(ui-sref="home.singlequestion({ url: toUrl(user.hottestDiscussionTheseDays.question) })" ng-click="modalClose()")
+                                        h2 {{ user.hottestDiscussionTheseDays.question }}
+
+                                .discussion__content--stats
+                                    .discussion__content--stat(ng-repeat="(statKey, statValue) in user.hottestDiscussionTheseDays.stats")
+                                        span.text--basic.separator--right {{ statValue }}
+                                        span.text--italic {{ statKey }}

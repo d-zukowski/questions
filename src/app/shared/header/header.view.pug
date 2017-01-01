@@ -1,17 +1,21 @@
 header.header(ng-class="{'header--small': currentState == 'single'}")
     .container
+
         .header__content
 
             .header__content--top
                 .row
                     .col-xs-2.col-sm-2.col-md-1.col-lg-1.col-xl-2
+
                         .header__aside
-                            .header__back
+                            .header__aside--back
                                 a.btn-round.btn-round--large.btn-round--linear(ui-sref="home.allquestions")
                                     i.icon-arrow-left
 
                     .col-xs-10.col-sm-10.col-md-11.col-lg-10.col-xl-8
+
                         .header__main(ng-class="{'header__main--single': currentState == 'single'}")
+
                             .header__main--left
                                 .header__logo
                                     a(href="/")
@@ -51,6 +55,7 @@ header.header(ng-class="{'header--small': currentState == 'single'}")
             .header__content--bottom(ng-if="currentState == 'all'")
                 .row
                     .col-xs-12.col-lg-10.offset-lg-1.col-xl-8.offset-xl-2  
+                    
                         .header__search
                             .header__search--input
                                 input.input(type="text" placeholder="Search questions" ng-model="searchData.query")

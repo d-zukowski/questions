@@ -1,52 +1,53 @@
 .action {
     @include flex(center, flex-end);
-    margin-bottom: 10px;
     position: relative;
-}
+    margin-bottom: 10px;    
 
-.action--asked {
-    width: 100%;
-    border-top: 1px solid $gray-500;
-    padding-top: 8px;
-}
-
-.action--more-activites {
-    text-align: center;
-
-    span {
-        margin-bottom: 5px;
+    &--asked {
+        width: 100%;        
+        padding-top: 8px;
+        border-top: 1px solid $gray-500;
     }
 
-}
+    &--more-activites {
+        text-align: center;
 
-.action--commented {
-    width: 100%;
-    border-top: 1px solid $gray-500;
-    padding-top: 6px;
-}
+        span {
+            margin-bottom: 5px;
+        }
 
-.action--answered {
-    width: 100%;
-    border-top: 1px solid $gray-600;
-    padding-top: 6px;
-
-    @include after(2, null, null, 0, 0) {
-        @include size(10px);
-        border-radius: 50%;
-        background: $black;
-        left: calc(50% - 5px);
-        bottom: -15px;
     }
 
-}
-
-.action--more-activites, .action--commented {
-    
-    @include after(2, null, null, 0, 0) {
-        @include size(10px);
-        border-radius: 50%;
-        background: $gray-500;
-        left: calc(50% - 5px);
-        bottom: -15px;
+    &--commented {
+        width: 100%;
+        padding-top: 6px;
+        border-top: 1px solid $gray-500;
     }
+
+    &--answered {
+        width: 100%;
+        padding-top: 6px;
+        border-top: 1px solid $gray-600;
+
+        @include after(2, null, null, 0, 0) {
+            @include size(10px);            
+            background: $black;
+            border-radius: 50%;
+            left: calc(50% - 5px);
+            bottom: -15px;
+        }
+
+    }
+
+    &--more-activites, &--commented {
+        
+        @include after(2, null, null, 0, 0) {
+            @include size(10px);            
+            background: $gray-500;
+            border-radius: 50%;
+            left: calc(50% - 5px);
+            bottom: -15px;
+        }
+    }
+
 }

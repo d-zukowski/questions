@@ -1,17 +1,17 @@
 .avatar {
-    overflow: hidden;
-    border-radius: 50%;
     position: relative;
-    z-index: 1;             
+    z-index: 1;     
+    overflow: hidden;
+    border-radius: 50%;            
 
     @include after(2) {
         @include size(100%);
         @include transition(.2s);
     }
 
-    .avatar__img {
-        object-fit: cover;
+    &__img {
         width: 100%;
+        object-fit: cover;        
     }
 
     &--small {

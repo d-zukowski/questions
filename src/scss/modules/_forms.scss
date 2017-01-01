@@ -12,44 +12,44 @@
     }
 
     input[type="radio"]:empty ~ label:before {
-        position: absolute;
-        display: block;
-        top: 5px;
-        left: -20px;
         content: '';
+        display: block;
+        position: absolute;        
+        top: 5px;
+        left: -20px;        
         width: 15px;
         height: 15px;
-        border: 1px solid $gray-500;
         border-radius: 50%;
+        border: 1px solid $gray-500;        
     }
 
     input[type="radio"]:checked ~ label:after {
         content: "";
-        width: 15px;
-        height: 15px;
-        border-radius: 50%;
-        border: 1px solid $gray-500;
         position: absolute;
         top: 5px;
         left: -20px;
-        z-index: 1;
+        z-index: 1;        
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        border: 1px solid $gray-500;       
     }
 
     input[type="radio"]:checked ~ label:before {
         content: "";
+        top: 9px;
+        left: -15.5px;
+        z-index: 2;        
         width: 7px;
         height: 7px;
         background: $gray-600;
-        z-index: 2;
-        top: 9px;
-        left: -15.5px;
     }
 
     label {
-        padding-left: 3px;
-        margin: 0;        
         font-size: 1.4rem;
         font-weight: 600;
+        margin: 0;     
+        padding-left: 3px;          
         white-space: nowrap;
     }
 
@@ -58,8 +58,8 @@
 .input {
     @include sizes(100%, 36px);
     background: $gray-100;
-    border: 1px solid $gray-200;
     padding: 0 16px;
+    border: 1px solid $gray-200;
     @include transition (.2s);
 
     &:placeholder {
@@ -67,8 +67,8 @@
     }
 
     &:focus {
-        outline: none;
         border-color: $blue-dark;
+        outline: none;        
     }
 
 }

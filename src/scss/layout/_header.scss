@@ -8,48 +8,47 @@
         padding: 0;
     }
 
-}
-
-.header--shadow {
-    box-shadow: inset 0 2px 3px $gray-200, 0 2px 3px $gray-200;
-    position: relative;
-    z-index: 1;
-}
-
-.header--small {
-    height: auto;
-    padding: 20px 0;
-
-    @include min-lg {
-        height: 116px;
-        padding: 0;
+    &--shadow {
+        box-shadow: inset 0 2px 3px $gray-200, 0 2px 3px $gray-200;
+        position: relative;
+        z-index: 1;
     }
 
-}
+    &--small {
+        height: auto;
+        padding: 20px 0;
 
-.header__content {
-}
+        @include min-lg {
+            height: 116px;
+            padding: 0;
+        }
 
-.header__content--top {
-
-    @include min-lg { 
-        padding-top: 45px;
     }
 
-}
+    &__content {
 
-    .header__aside {
-        height: 100%;
+        &--top {
+            @include min-lg { 
+                padding-top: 45px;
+            }
+        }
+
+        &--bottom {
+            margin-top: 15px;
+        }            
+
+    }
+
+    &__aside {
         @include flex;
+        height: 100%;
 
         @include min-sm { 
             height: auto;
             display: block;
         }
 
-    }
-
-        .header__back {
+        &--back {
 
             @include min-lg { 
                 margin-top: -5px;
@@ -62,21 +61,22 @@
 
         }
 
+    }
 
-    .header__main {
+    &__main {
         @include flex(center, flex-start, column);
 
         @include min-md {
-            @include flex(space-between, flex-end);
+            justify-content: space-between;
+            align-items: flex-end;
+            flex-flow: row nowrap;
         }
 
-    }
+        &--single {
+            @include flex(space-between, center, row, wrap);
+        }        
 
-    .header__main--single {
-        @include flex(space-between, center, row, wrap);
-    }
-
-        .header__main--left {
+        &--left {
             @include flex;           
 
             @include min-sm {
@@ -85,25 +85,7 @@
 
         }
 
-            .header__logo {
-
-            }
-
-            .header__add {
-                margin-left: 25px;
-                margin-top: 5px;
-            }
-
-            .header__add--space {
-                margin-left: 37px;
-
-                @include min-sm {  
-                    margin-left: 39px;
-                }
-
-            }
-
-        .header__main--right {
+        &--right {
             @include flex(flex-start, flex-end, row, wrap);
 
             @include min-sm {                
@@ -114,54 +96,63 @@
                 margin: 0;
             }
 
+        }        
+
+    }    
+
+    &__add {
+        margin-top: 5px;
+        margin-left: 25px;        
+
+        &--space {
+            margin-left: 37px;
+
+            @include min-sm {  
+                margin-left: 39px;
+            }
+
         }
 
-            .header__filters {
-                @include flex;
-                margin-left: 18px;
-                margin-top: 10px;
-                margin-bottom: 3px;
+    } 
 
-                @include min-sm {
-                    margin-top: 0;
-                    margin-bottom: 0;
-                }
+    &__filters {
+        @include flex;        
+        margin-top: 10px;
+        margin-bottom: 3px;
+        margin-left: 18px;
 
-                @include min-lg {
-                    margin-left: 0px;
-                }
+        @include min-sm {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
 
-            }
+        @include min-lg {
+            margin-left: 0;
+        }
 
-            .header__sort {
-                @include flex;
-                white-space: nowrap;
-                margin-top: 3px;
-                margin-bottom: 3px;
+    }
 
-                @include min-sm {
-                    margin-top: 0;
-                    margin-bottom: 0;
-                }
+    &__sort {
+        @include flex;
+        margin-top: 3px;
+        margin-bottom: 3px;
+        white-space: nowrap;
 
-            }
+        @include min-sm {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
 
+    }    
 
-.header__content--bottom {
-    margin-top: 15px;
-    // padding-bottom: 15px;
+    &__search {
+        @include flex;
 
-    // @include min-xl {
-    //     padding-bottom: 0px;
-    // }
+        &--input {
+            width: 100%;
+            margin-right: 20px;
+        }
+
+    }    
 
 }
-
-    .header__search {
-        @include flex;
-    }
-
-    .header__search--input {
-        width: 100%;
-        margin-right: 20px;
-    }

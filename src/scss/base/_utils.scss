@@ -1,32 +1,11 @@
-// Animations
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes fadeOut {
-    0% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0;
-    }
-}
-
 // Fonts
 
-@mixin font ($color: $gray-600, $font-size: 1.3rem, $line-height: $font-size * 2, $font-weight: normal) {
+@mixin font ($color: $gray-600, $font-size: 1.3rem, $line-height: $font-size * 2, $font-weight: normal, $letter-spacing: 0) {
     color: $color;
     font-size: $font-size;
     line-height: $line-height;
     font-weight: $font-weight;
+    letter-spacing: $letter-spacing;
 }
 
 .fw-100 {

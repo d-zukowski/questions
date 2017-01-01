@@ -1,18 +1,27 @@
 .all-questions
+
+    //- Questions
     .all-questions__question(ng-repeat="question in allQuestions | filter: filterBy | limitTo: questionsLimit | orderBy: sortBy : true")
         .row.no-margin--sm
             .col-xs-12
+
                 .box-question
+
                     .box-question--top
                         .row
                             .col-xs-12.col-lg-9
+
+                                //- Question - heading
                                 .box-question__heading
                                     .row
                                         .col-xs-3.col-sm-2.no-padding-left.no-padding-right
+
                                             .box-question__heading--avatar
                                                 .avatar.avatar--small(ng-click="showUserProfile(users[question.author]['id'])")
                                                     img.avatar__img(ng-src="img/avatars/{{ question.author }}.jpg" alt="{{ users[question.author]['name'] }}")   
-                                        .col-xs-9.col-sm-10.no-padding-left  
+                                        
+                                        .col-xs-9.col-sm-10.no-padding-left
+
                                             .box-question__heading--question
                                                 .author
                                                     a(href="" ng-click="showUserProfile(users[question.author]['id'])") {{ users[question.author]['name'] }}
@@ -24,20 +33,25 @@
                         .box-question--bottom
                             .row.no-margin-right--sm
                                 .col-xs-7.col-md-8.col-lg-9
+
+                                    //- Question - content
                                     .box-question__content
                                         .row.box-question__content--row
                                             .col-xs-4.col-sm-4.col-md-3.col-lg-2.box-question__content--col.no-padding-left.hidden-xs-down
+
                                                 .box-question__content--asked
                                                     .action.action--asked
                                                         span.text--light asked
 
                                             .col-xs-6.col-sm-4.col-md-3.col-lg-2.box-question__content--col(ng-if="question.moreActivitiesLength")
+
                                                 .box-question__content--more-activites
                                                     .count.text--basic {{ question.moreActivitiesLength }}
                                                     .action.action--more-activites
                                                         span.text--italic more activites
 
                                             .col-xs-6.col-sm-4.col-md-3.col-lg-2.hidden-md-down.box-question__content--col(ng-repeat="activity in question.activities")
+                                                
                                                 .box-question__content--activity
                                                     .avatar.avatar--small(ng-click="showUserProfile(users[activity.author]['id'])")
                                                         img.avatar__img(ng-src="img/avatars/{{ activity.author }}.jpg" alt="{{ users[activity.author]['name'] }}")                                            
@@ -45,6 +59,7 @@
                                                         span.text--light {{ activitiesTypes[activity.type] }}     
 
                                             .col-xs-6.col-sm-4.col-md-3.col-lg-2.hidden-sm-down.hidden-lg-up.box-question__content--col(ng-repeat="activity in question.activities | limitTo: 2")
+                                                
                                                 .box-question__content--activity
                                                     .avatar.avatar--small(ng-click="showUserProfile(users[activity.author]['id'])")
                                                         img.avatar__img(ng-src="img/avatars/{{ activity.author }}.jpg" alt="{{ users[activity.author]['name'] }}")                                            
@@ -52,6 +67,7 @@
                                                         span.text--light {{ activitiesTypes[activity.type] }}
 
                                             .col-xs-6.col-sm-4.col-md-3.col-lg-2.hidden-md-up.box-question__content--col(ng-repeat="activity in question.activities | limitTo: 1")
+                                                
                                                 .box-question__content--activity
                                                     .avatar.avatar--small(ng-click="showUserProfile(users[activity.author]['id'])")
                                                         img.avatar__img(ng-src="img/avatars/{{ activity.author }}.jpg" alt="{{ users[activity.author]['name'] }}")                                            
@@ -59,12 +75,14 @@
                                                         span.text--light {{ activitiesTypes[activity.type] }}                                                                                                                                                                                                                                                                                           
                                                 
                                 .col-xs-5.col-md-4.col-lg-3.no-padding-right
+                                    
                                     .box-question__aside
                                         .all-questions__question--stats
                                             .stat(ng-repeat="stat in question.stats.discussion")
                                                 span.text--basic {{ stat.value }}
                                                 span.text--italic.separator--left {{ stat.name }}                                                                               
 
+    //- Load more
     .all-questions__load-more(ng-if="allQuestions.length >= questionsLimit && !filterBy.question.length && questionsLimit")
         button.btn-link(ng-click="loadMoreQuestions()")
             | load more questions ({{ allQuestions.length - questionsLimit }})

@@ -1,38 +1,17 @@
 .box-question {
     width: 100%;
-}
 
+    &__heading {
+        height: 92px;
+        background: $blue-light;
+        padding: 20px 5px;
 
-    .box-question--top {
-
-    }
-
-        .box-question__heading {
-            background: $blue-light;
-            padding: 20px 5px;
-
-            @include min-sm {
-                padding: 20px 0;
-            }
-
-            &--left {
-                @include min-md {
-                    padding-right: 0;
-                }
-            }
-
-            &--right {
-                margin-top: 1px;
-
-                @include min-md {
-                    margin-top: 0;
-                    padding-left: 0;
-                }
-            }
-
+        @include min-sm {
+            padding: 20px 0;
         }
 
-        .box-question__heading--single {
+        &--single {
+            height: 92px;
             padding: 20px 0 5px 0;
 
             @include min-md {
@@ -41,142 +20,154 @@
 
         }
 
-            .box-question__heading--avatar {
-                @include flex;
+        &--left {
+            @include min-md {
+                padding-right: 0;
+            }
+        }
 
+        &--right {
+            margin-top: 1px;
+
+            @include min-md {
+                margin-top: 0;
+                padding-left: 0;
             }
 
-            .box-question__heading--question {
-                margin-left: 15px;
-                margin-top: -7px;
-                @include flex(flex-start, flex-start, column);
-                height: 100%;
+        }        
+
+        &--avatar {
+            @include flex;
+
+        }
+
+        &--question {           
+            @include flex(flex-start, flex-start, column);
+            height: 100%;
+            margin-top: -7px;
+            margin-left: 15px;
+
+            @include min-md {
+                display: block;
+            }
+
+            .title--single {                    
+                @include flex;
+                width: 100%;
+                margin-top: 7px;
 
                 @include min-md {
                     display: block;
-                }
-
-                .title--single {                    
-                    @include flex;
-                    width: 100%;
-                    margin-top: 7px;
-
-                    @include min-md {
-                        display: block;
-                        text-align: left;
-                    }
-
+                    text-align: left;
                 }
 
             }
 
-            .box-question__heading--unfollow {
-                @include flex;
-                padding: 13px 0;
-            }            
+        }
 
+        &--unfollow {
+            @include flex;
+            padding: 13px 0;
+        }  
 
-    .box-question--bottom {
-        
     }
 
-        .box-question__content {
+    &__content {
+
+        &--row {
+            margin-right: -5px;
+            margin-left: 0;            
         }
 
-            .box-question__content--row {
-                margin-left: 0;
-                margin-right: -5px;
+        &--col {
+            padding: 0 5px;
+
+            &:first-child {
+                padding-left: 0;
             }
 
-                .box-question__content--col {
-                    padding: 0 5px;
-
-                    &:first-child {
-                        padding-left: 0;
-                    }
-
-                }
-
-                .box-question__content--asked {
-                    background: $blue-light;
-                    height: 100%;
-                    padding: 0 10px;
-                    @include flex(flex-end, center, column);
-                    width: 90px;
-                }
-
-                .box-question__content--more-activites {
-                    background: $gray-200;
-                    height: 155px;
-                    padding: 23px 10px 0 10px;
-                    margin-top: 5px;
-                    @include flex(space-between, center, column);
-                    width: 80px;
-                    margin-left: -5px;
-
-                    @include min-sm {
-                        width: 90px;
-                        margin-top: 35px;
-                        background: $white;
-                        margin-left: 0;
-                    }
-
-                    .count {
-                        line-height: 5rem;
-                    }
-
-                }
-
-                .box-question__content--activity {
-                    background: $gray-200;
-                    height: 155px;
-                    padding: 23px 10px 0 10px;
-                    margin-top: 5px;
-                    @include flex(space-between, center, column);
-                    width: 80px;
-
-                    @include min-sm {
-                        width: 90px;
-                        margin-top: 35px;
-                    }
-
-                }
-
-                .box-question__content--text {
-                    padding: 10px 10px 0 20px;
-
-                    @include min-md {
-                        padding: 25px 0 35px 35px;
-                    }
-
-                }
-
-                .box-question__content--voting {
-                    @include flex(flex-end, flex-start);
-                    margin-top: 0;
-
-                    @include min-md {
-                        @include flex(center, flex-start);
-                        height: 100%;
-                        margin-top: 25px;
-                    }
-
-                }
-
-        .box-question__content--small {
-            @include flex(space-between);
-            padding-left: 15px;
-            margin-bottom: 30px;
         }
+
+        &--asked {
+            @include flex(flex-end, center, column);
+            @include sizes(90px, 100%);
+            background: $blue-light;
+            padding: 0 10px;
+        }
+
+        &--more-activites {
+            @include flex(space-between, center, column);
+            @include sizes(80px, 155px);
+            background: $gray-200;            
+            margin-top: 5px;
+            margin-left: -5px;
+            padding: 23px 10px 0 10px;
+
+            @include min-sm {
+                width: 90px;
+                background: $white;
+                margin-top: 35px;
+                margin-left: 0;
+            }
+
+            .count {
+                line-height: 5rem;
+            }
+
+        }
+
+        &--activity {
+            @include flex(space-between, center, column);
+            @include sizes(80px, 155px);
+            background: $gray-200;
+            margin-top: 5px;
+            padding: 23px 10px 0 10px;
+            
+            @include min-sm {
+                width: 90px;
+                margin-top: 35px;
+            }
+
+        }
+
+        &--text {
+            padding: 10px 10px 0 20px;
+
+            @include min-md {
+                padding: 25px 0 35px 35px;
+            }
+
+        }
+
+        &--voting {
+            @include flex(flex-end, flex-start);
+            margin-top: 0;
+
+            @include min-md {
+                @include flex(center, flex-start);
+                height: 100%;
+                margin-top: 25px;
+            }
+
+        }
+
+        &--small {
+            @include flex(space-between);            
+            margin-bottom: 30px;
+            padding-left: 15px;
+        }
+
+    }
+
+}
 
 
 .box-comment {
     width: 100%;
     margin-top: 20px;
     box-shadow: -5px -8px 10px -10px $gray-300, 10px -10px 10px -10px $gray-300;
-}
 
-    .box-comment__offset {
+    &__offset {
         @include size(100%);
         background: $white;
         border-bottom: 1px solid $gray-200;
@@ -192,11 +183,11 @@
         }
     }
 
-    .box-comment__avatar {
+    &__avatar {
         @include flex(center, flex-start);
         height: 100%;
         background: $white;
-        padding: 5px 0;        
+        padding: 5px 0;
         border-bottom: 1px solid $gray-300;
 
         @include min-sm {
@@ -206,27 +197,23 @@
 
     }
 
-    .box-comment__content {
+    &__content {
         height: 100%;
         background: $white;        
-        border-bottom: 1px solid $gray-300;
         padding: 10px 6px;
+        border-bottom: 1px solid $gray-300;
 
         @include min-sm {
             padding: 10px 20px;
         }
 
-    }
-
-    .box-comment__content--large {
-
-        @include min-sm {
-            padding: 10px 20px 30px 20px;
+        &--large {
+            @include min-sm {
+                padding: 10px 20px 30px 20px;
+            }
         }
 
-    }
-
-        .box-comment__content--author {
+        &--author {
             @include flex(flex-start, center);
             height: 100%;
             white-space: nowrap;
@@ -237,7 +224,7 @@
 
         }
 
-        .box-comment__content--text {
+        &--text {
             padding: 8px;
 
             @include min-sm {
@@ -246,13 +233,15 @@
 
         }
 
-    .box-comment__voting {
+    }
+
+    &__voting {
         @include flex(flex-end);
         background: $white;
         height: 100%;
-        padding-left: 17px;
         border-bottom: 1px solid $gray-300;
         padding-bottom: 25px;
+        padding-left: 17px;
 
         @include min-sm {
             justify-content: center;
@@ -260,3 +249,5 @@
         }
 
     }
+
+}

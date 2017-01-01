@@ -1,11 +1,13 @@
 .voting {  
-}
 
-    .voting__content {
+    &__content {
         @include flex;
         margin-right: 10px;
-    }
 
-        .voting__content__value {
+        &--value {
             margin-right: 10px;
         }
+
+    }
+
+}

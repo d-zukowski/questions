@@ -1,9 +1,9 @@
 .btn-round {
+    @include flex(); 
     @include size(22px);
-    @include flex();  
-    cursor: pointer;
-    border: none;
     border-radius: 50%;
+    border: none;
+    cursor: pointer;
     @include transition(.2s);
 
     i {
@@ -94,9 +94,9 @@
 
 .btn-triangle {
     @include flex();  
-    cursor: pointer;
-    border: none;
     margin: 3px 0;
+    border: none;
+    cursor: pointer;
 
     i {
         font-size: 1.6rem;
@@ -142,14 +142,14 @@
 }
 
 .btn-rectangle {
-    @include sizes(auto, 36px);
     @include flex(center, baseline);
+    @include sizes(auto, 36px);    
     background: $white;
     font-size: 1.4rem;
-    font-weight: 600;
-    cursor: pointer;
+    font-weight: 600;    
     border: 1px solid $gray-300;
     white-space: nowrap;
+    cursor: pointer;
     @include transition(.2s);
     display: inline-block;
 
@@ -199,10 +199,10 @@
 
 .btn-link {
     background: transparent;
-    border: none;
     color: $red;
     font-family: $lora;
     font-weight: 600;
+    border: none;
     padding: 32px 30px;
     cursor: pointer;
     @include transition(.2s);

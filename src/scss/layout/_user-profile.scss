@@ -1,41 +1,32 @@
 .modal {
-    transition: opacity .2s ease-in-out;
-}
 
-.modal--fade-out {
-    animation: fadeOut 0.2s ease-in;
-}
-
-.modal--fade-in {
-    animation: fadeIn 0.2s ease-in;
-}
-
-.modal__layer {
-    @include fixed(999);
-    @include size(100%);
-    background: rgba(0, 0, 0, .7);
-    cursor: pointer;
-}
-
-.modal__content {
-    @include flex;
-    padding: 25px 0;
-    
-}
-
-.user-profile {
-    background: $white;
-    @include sizes(850px, calc(100vh - 40px));
-    max-height: 1000px;
-    overflow-y: auto;
-    cursor: default;
-}
-
-    .user-profile__close {
-        @include flex(flex-end);
+    &__layer {
+        @include fixed(999);
+        @include size(100%);
+        background: rgba($black, .7);
+        cursor: pointer;
     }
 
-        .user-profile__close--button {
+    &__content {
+        @include flex;
+        padding: 25px 0;
+        
+    }
+
+}
+
+
+.user-profile {
+    @include sizes(850px, calc(100vh - 40px));
+    max-height: 1000px;
+    background: $white;
+    overflow-y: auto;
+    cursor: default;
+
+    &__close {
+        @include flex(flex-end);
+        
+        &--button {
             padding: 12px 15px;
             cursor: pointer;
 
@@ -46,83 +37,86 @@
             }
 
             &:hover {
+
                 i {
                     color: $red;
                 }
+                
             }
 
         }
 
-    .user-profile__user {
+    }
+
+    &__user {
         padding: 0 10px;
 
         @include min-md {
             padding: 0 45px;
         }
 
-    }
-
-        .user-profile__user--avatar {
+        &--avatar {
             @include flex;
             margin-top: -5px;
         }
 
-        .user-profile__user--name {
+        &--name {
             @include flex;
             color: $blue-dark;
             margin-top: 20px;
         }
 
-        .user-profile__user--info {
+        &--info {
             @include flex(space-between, center, column);
             padding-top: 15px;
             padding-bottom: 25px;
             border-bottom: 1px solid $gray-500;
 
             @include min-md {
-                padding-top: 5px;
                 @include flex(space-between, baseline);
+                padding-top: 5px;                
             }
+            
         }
 
-            .user-profile__user--info-item {
-                @include flex(center, center, column);
-                margin-bottom: 15px;
+        &--info-item {
+            @include flex(center, center, column);
+            margin-bottom: 15px;
 
-                .text--light {
-                    font-size: 1.35rem;
+            .text--light {
+                font-size: 1.35rem;
+            }
+
+            @include min-md {
+                display: inline;
+                margin-bottom: 0;
+            }
+
+        }        
+
+        &--level {
+            position: relative;
+            top: 12px;                
+            margin-left: 5px;
+
+            i {
+                color: $gray-300;
+                font-size: 2.4rem;
+            }
+
+            &.level--active {
+
+                i {
+                    color: $red-light;
                 }
 
-                @include min-md {
-                    display: inline;
-                    margin-bottom: 0;
-                }
+            }
 
-            }        
+        }   
 
-                .user-profile__user--level {
-                    position: relative;
-                    top: 12px;                
-                    margin-left: 5px;
+    }    
 
-                    i {
-                        color: $gray-300;
-                        font-size: 2.4rem;
-                    }
-
-                    &.level--active {
-
-                        i {
-                            color: $red-light;
-                        }
-
-                    }
-
-                }        
-
-    
-
-    .user-profile__stats {
+    &__stats {
         margin-top: 25px;
         padding: 0 10px;
 
@@ -130,9 +124,7 @@
             padding: 0 45px;
         }
 
-    }
-
-        .user-profile__stats--heading {
+        &--heading {
             @include flex(space-between);
 
             .title {
@@ -148,178 +140,195 @@
 
         }
 
-        .user-profile__stats--user-stats {            
-        }
-
-            .user-stats__title {
-                padding: 15px 0 30px;
-
-                @include min-md {
-                    padding: 45px 0;
-                }
-
-                .text--light {
-                    font-size: 1.35rem;
-                    line-height: 2rem;
-                    text-align: center;
-                }
-
-            }
-
-            .user-stats__boxes {
-                @include flex(center, center, row, wrap);
-
-                @include min-md {
-                    flex-flow: row nowrap;
-                }
-
-            }
-
-                .user-stats__box {
-                    @include flex;
-                    @include size(90px);
-                    background: $blue-light;
-                    margin: 0 10px;
-
-                    &.rotate-10 {
-                        transform: rotate(10deg);
-
-                        .user-stats__box--content {
-                            transform: rotate(-10deg);
-                        }
-
-                    }
-
-                    &.rotate-15 {
-                        transform: rotate(-15deg);
-
-                        .user-stats__box--content {
-                            transform: rotate(15deg);
-                        }
-
-                    }
-
-                    &.rotate-35 {
-                        transform: rotate(-35deg);
-
-                        .user-stats__box--content {
-                            transform: rotate(35deg);
-                        }
-
-                    }
-
-                }
-
-                .user-stats__box--content {
-                    @include flex(center, center, column);
-
-                    .value {
-                        font-size: 2.4rem;
-                        font-weight: 700;
-                        margin-bottom: 7px;
-                    }
-
-                    .name {
-                        font-family: $lora;
-                    }
-
-                }
-
-        
-        .user-profile__stats--users-stats {
+        &--users-stats {
             margin-top: 65px;
         }
 
-            .users-stats__title {
+    }    
 
-                .text--light {
-                    font-size: 1.35rem;
-                    text-align: center;
-                }       
-                         
-            }
-
-            .users-stats__boxes {
-                @include flex(center, flex-start);
-                margin-top: 15px;
-            }
-
-                .users-stats__box {
-                    margin: 0 6px;
-                }
-
-                    .users-stats__box--avatar {
-                        @include flex;
-                        @include size(90px);
-                        background: url(../img/pattern.jpg);
-                        background-repeat: repeat;
-                    }
-
-                    .users-stats__box--name {
-                        width: 90px;
-                        text-align: center;
-                        margin-top: 5px;
-
-                        a {
-                            display: inline-block;
-                            line-height: 2rem;                            
-                        }
-
-                    }
-
-    .user-profile__discussion {
+    &__discussion {
         margin-top: 40px;
     }
 
-        .discussion__title {
+}
 
-            .text--light {
-                font-size: 1.35rem;
-                text-align: center;
-            }   
+
+.user-stats {
+
+    &__title {
+        padding: 15px 0 30px;
+
+        @include min-md {
+            padding: 45px 0;
+        }
+
+        .text--light {
+            font-size: 1.35rem;
+            line-height: 2rem;
+            text-align: center;
+        }
+
+    }
+
+    &__boxes {
+        @include flex(center, center, row, wrap);
+
+        @include min-md {
+            flex-flow: row nowrap;
+        }
+
+    }
+
+    &__box {
+        @include flex;
+        @include size(90px);
+        background: $blue-light;
+        margin: 0 10px;
+
+        &.rotate-10 {
+            transform: rotate(10deg);
+
+            .user-stats__box--content {
+                transform: rotate(-10deg);
+            }
 
         }
 
-        .discussion__content {
+        &.rotate-15 {
+            transform: rotate(-15deg);
+
+            .user-stats__box--content {
+                transform: rotate(15deg);
+            }
+
+        }
+
+        &.rotate-35 {
+            transform: rotate(-35deg);
+
+            .user-stats__box--content {
+                transform: rotate(35deg);
+            }
+
+        }
+
+        &--content {
+            @include flex(center, center, column);
+
+            .value {
+                font-size: 2.4rem;
+                font-weight: 700;
+                margin-bottom: 7px;
+            }
+
+            .name {
+                font-family: $lora;
+            }
+
+        }
+
+    }
+
+}
+
+
+.users-stats {
+
+    &__title {
+
+        .text--light {
+            font-size: 1.35rem;
+            text-align: center;
+        }       
+                    
+    }
+
+    &__boxes {
+        @include flex(center, flex-start);
+        margin-top: 15px;
+    }
+
+    &__box {
+        margin: 0 6px;
+
+        &--avatar {
+            @include flex;
+            @include size(90px);
             background: url(../img/pattern.jpg);
             background-repeat: repeat;
-            margin-top: 75px;
         }
 
-            .discussion__content--avatar {
-                @include flex;
-                margin-top: -20px;
+        &--name {
+            width: 90px;
+            text-align: center;
+            margin-top: 5px;
 
-                .avatar {
-                    transform: translateY(-50%);
-                }
-
+            a {
+                display: inline-block;
+                line-height: 2rem;                            
             }
 
-            .discussion__content--article {
-                text-align: center;
-                margin-top: -15px;
+        }
+
+    }
+
+}
+
+
+.discussion {
+
+    &__title {
+
+        .text--light {
+            font-size: 1.35rem;
+            text-align: center;
+        }   
+
+    }
+
+    &__content {
+        background: url(../img/pattern.jpg);
+        background-repeat: repeat;
+        margin-top: 75px;
+
+        &--avatar {
+            @include flex;
+            margin-top: -20px;
+
+            .avatar {
+                transform: translateY(-50%);
             }
 
-            .discussion__content--stats {
-                @include flex(center, center, row, wrap);
-                padding: 30px 0;
+        }
 
-                @include min-sm  {
-                    @include flex;                    
-                }
+        &--article {
+            text-align: center;
+            margin-top: -15px;
+        }
 
+        &--stats {
+            @include flex(center, center, row, wrap);
+            padding: 30px 0;
+
+            @include min-sm  {
+                @include flex;                    
             }
 
-                .discussion__content--stat {
-                    width: 50%;
-                    padding: 0 10%;
-                    white-space: nowrap;
+        }
 
-                    @include min-sm {
-                        width: auto;
-                        margin: 0 15px;
-                        padding: 0;
-                    }
+        &--stat {
+            width: 50%;
+            padding: 0 10%;
+            white-space: nowrap;
 
-                }
+            @include min-sm {
+                width: auto;
+                margin: 0 15px;
+                padding: 0;
+            }
+
+        }
+
+    }
+
+}

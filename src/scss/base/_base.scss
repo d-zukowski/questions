@@ -10,16 +10,13 @@ html {
 body {
     background: $yellow;
     min-height: 100vh;
-    margin: 0 auto;
     @include font;
     font-family: $os;
+    margin: 0 auto;
 }
 
 a {
-    color: $blue-dark;
-    font-size: 1.4rem;
-    font-weight: 600;
-    letter-spacing: -.05rem;
+    @include font($blue-dark, 1.4rem, 1.8rem, 600, -.05rem);
     text-decoration: none;
     @include transition(.2s);
 
@@ -45,12 +42,13 @@ a {
 }
 
 ul {
-    padding: 0;    
     margin: 0;
-}
+    padding: 0;
 
-ul li {
-    list-style: none;   
+    & li {
+        list-style: none;
+    }
+
 }
 
 i {

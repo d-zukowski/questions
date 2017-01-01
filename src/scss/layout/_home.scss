@@ -1,13 +1,13 @@
 .content {
     background: $gray-100;
-    margin-bottom: 60px;
-    margin-left: -10px;
     margin-right: -10px;
+    margin-bottom: 60px;
+    margin-left: -10px;    
     overflow-x: hidden;
 
     @include min-sm {
-        margin-left: 0px;
-        margin-right: 0px;        
+        margin-right: 0px;   
+        margin-left: 0px;             
     }
 
 }

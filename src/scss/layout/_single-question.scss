@@ -1,30 +1,28 @@
-.single-question {}
+.single-question {
 
-    .single-question__question {
+    &__question {
         background: $white;
         box-shadow: 2px 0 5px $gray-200;
     }
-        
 
-    .single-question__answer {
+    &__answer {
 
-    }
-        .single-question__answer--content {
+        &--content {
             @include flex;
             width: 100%;
             transform: translateY(-50%);
         }
 
-    
-    .single-question__comments {
-        padding-bottom: 40px;
     }
+    
+    &__comments {
+        padding-bottom: 40px;
 
-        .single-question__comments--stats {
+        &--stats {
             @include flex;
             margin-top: 40px;
         }
 
-        .single-question__comments--list {
-            
-        }
+    }
+
+}
