@@ -5,76 +5,81 @@
                 .user-profile__close
                     .user-profile__close--button(ng-click="modalClose()")
                         i.icon-cancel
-                .user-profile__user
-                    .user-profile__user--avatar
-                        .avatar.avatar--large
-                            img.avatar__img(ng-src="img/avatars/{{ user.id }}.jpg" alt="{{ user.name }}")
+                .row.no-margin
+                    .col-xs-12.col-md-10.offset-md-1
+                        .user-profile__user
+                            .user-profile__user--avatar
+                                .avatar.avatar--large
+                                    img.avatar__img(ng-src="img/avatars/{{ user.id }}.jpg" alt="{{ user.name }}")
 
-                    .user-profile__user--name
-                            h3 {{ user.name }}
+                            .user-profile__user--name
+                                    h3 {{ user.name }}
 
-                    .user-profile__user--info
-                        div
-                            span.text--light.separator--right Member for
-                            span.text--basic 5 months
+                            .user-profile__user--info
+                                .user-profile__user--info-item
+                                    span.text--light.separator--right Member for
+                                    span.text--basic 5 months
 
-                        div
-                            span.text--light.separator--right Last seen
-                            span.text--basic 5 months
+                                .user-profile__user--info-item
+                                    span.text--light.separator--right Last seen
+                                    span.text--basic 5 months
 
-                        div
-                            span.text--light.separator--right Activity level
-                                span.user-profile__user--level(ng-class="{'level--active': user.activityLevel >= 1}")
-                                    i.icon-level
-                                span.user-profile__user--level(ng-class="{'level--active': user.activityLevel >= 2}")
-                                    i.icon-level
-                                span.user-profile__user--level(ng-class="{'level--active': user.activityLevel >= 3}")
-                                    i.icon-level
+                                .user-profile__user--info-item
+                                    span.text--light.separator--right Activity level
+                                    span
+                                        span.user-profile__user--level(ng-class="{'level--active': user.activityLevel >= 1}")
+                                            i.icon-level
+                                        span.user-profile__user--level(ng-class="{'level--active': user.activityLevel >= 2}")
+                                            i.icon-level
+                                        span.user-profile__user--level(ng-class="{'level--active': user.activityLevel >= 3}")
+                                            i.icon-level
                 
-                .user-profile__stats
-                    .user-profile__stats--heading
-                        button.btn-round.btn-round--filled
-                            i.icon-arrow-left              
-                        
-                        .title How it all started
+                .row.no-margin
+                    .col-xs-12.col-md-10.offset-md-1
+                        .user-profile__stats
+                            .user-profile__stats--heading
+                                button.btn-round.btn-round--filled
+                                    i.icon-arrow-left              
+                                
+                                .title How it all started
 
-                        button.btn-round.btn-round--filled
-                            i.icon-arrow-right
+                                button.btn-round.btn-round--filled
+                                    i.icon-arrow-right
 
-                    .user-profile__stats--user-stats
-                        .user-stats__title
-                            .text--light That's where We have been these 5 months ago
-                        .user-stats__boxes
-                            .user-stats__box.rotate-35
-                                .user-stats__box--content
-                                    .value {{ user.stats.peers }}
-                                    .name peers
+                            .user-profile__stats--user-stats
+                                .user-stats__title
+                                    .text--light That's where We have been these 5 months ago
+                                .user-stats__boxes
+                                    .user-stats__box.rotate-35
+                                        .user-stats__box--content
+                                            .value {{ user.stats.peers }}
+                                            .name peers
 
-                            .user-stats__box.rotate-15
-                                .user-stats__box--content
-                                    .value {{ user.stats.discussions }}
-                                    .name discussions
+                                    .user-stats__box.rotate-15
+                                        .user-stats__box--content
+                                            .value {{ user.stats.discussions }}
+                                            .name discussions
 
-                            .user-stats__box.rotate-35
-                                .user-stats__box--content
-                                    .value {{ user.stats.findings }}
-                                    .name findings
+                                    .user-stats__box.rotate-35
+                                        .user-stats__box--content
+                                            .value {{ user.stats.findings }}
+                                            .name findings
 
-                            .user-stats__box.rotate-10 
-                                .user-stats__box--content
-                                    .value {{ user.stats.questions }}
-                                    .name questions
+                                    .user-stats__box.rotate-10 
+                                        .user-stats__box--content
+                                            .value {{ user.stats.questions }}
+                                            .name questions
 
-                    .user-profile__stats--users-stats
-                        .users-stats__title
-                            .text--light Who joined the platform that same period
-                        .users-stats__boxes
-                            .users-stats__box(ng-repeat="item in user.usersJoinedInTheSamePeroid")
-                                .users-stats__box--avatar
-                                    .avatar.avatar--small(ng-click="showUserProfile(users[item]['id'])")
-                                        img.avatar__img(ng-src="img/avatars/{{ item }}.jpg" alt="{{ users[item]['name'] }}")
-                                .users-stats__box--name
-                                        a(href="" ng-click="showUserProfile(users[item]['id'])") {{ users[item]['name'] }}
+                            .user-profile__stats--users-stats
+                                .users-stats__title
+                                    .text--light Who joined the platform that same period
+                                .users-stats__boxes
+                                    .users-stats__box(ng-repeat="item in user.usersJoinedInTheSamePeroid")
+                                        .users-stats__box--avatar
+                                            .avatar.avatar--small(ng-click="showUserProfile(users[item]['id'])")
+                                                img.avatar__img(ng-src="img/avatars/{{ item }}.jpg" alt="{{ users[item]['name'] }}")
+                                        .users-stats__box--name
+                                                a(href="" ng-click="showUserProfile(users[item]['id'])") {{ users[item]['name'] }}
 
                 .user-profile__discussion 
                     .discussion__title

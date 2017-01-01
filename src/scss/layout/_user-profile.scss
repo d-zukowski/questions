@@ -54,7 +54,12 @@
         }
 
     .user-profile__user {
-        padding: 0 125px;
+        padding: 0 10px;
+
+        @include min-md {
+            padding: 0 45px;
+        }
+
     }
 
         .user-profile__user--avatar {
@@ -69,71 +74,105 @@
         }
 
         .user-profile__user--info {
-            @include flex(space-between);
-            margin-top: 5px;
+            @include flex(space-between, center, column);
+            padding-top: 15px;
             padding-bottom: 25px;
             border-bottom: 1px solid $gray-500;
 
-            .text--light {
-                font-size: 1.35rem;
+            @include min-md {
+                padding-top: 5px;
+                @include flex(space-between, baseline);
             }
-
         }
 
-            .user-profile__user--level {
-                position: relative;
-                top: 12px;                
-                margin-left: 5px;
+            .user-profile__user--info-item {
+                @include flex(center, center, column);
+                margin-bottom: 15px;
 
-                i {
-                    color: $gray-300;
-                    font-size: 2.4rem;
+                .text--light {
+                    font-size: 1.35rem;
                 }
 
-                &.level--active {
-
-                    i {
-                        color: $red-light;
-                    }
-
+                @include min-md {
+                    display: inline;
+                    margin-bottom: 0;
                 }
 
             }        
+
+                .user-profile__user--level {
+                    position: relative;
+                    top: 12px;                
+                    margin-left: 5px;
+
+                    i {
+                        color: $gray-300;
+                        font-size: 2.4rem;
+                    }
+
+                    &.level--active {
+
+                        i {
+                            color: $red-light;
+                        }
+
+                    }
+
+                }        
 
     
 
     .user-profile__stats {
         margin-top: 25px;
-        padding: 0 125px;
+        padding: 0 10px;
+
+        @include min-md {
+            padding: 0 45px;
+        }
+
     }
 
         .user-profile__stats--heading {
             @include flex(space-between);
 
             .title {
-                font-size: 3.8rem;
+                font-size: 2.6rem;
                 font-family: $lora;
                 font-style: italic;
+
+                @include min-md {
+                    font-size: 3.8rem;
+                }
+
             }
 
         }
 
-        .user-profile__stats--user-stats {
-
+        .user-profile__stats--user-stats {            
         }
 
             .user-stats__title {
-                margin: 45px 0;
+                padding: 15px 0 30px;
+
+                @include min-md {
+                    padding: 45px 0;
+                }
 
                 .text--light {
                     font-size: 1.35rem;
+                    line-height: 2rem;
                     text-align: center;
                 }
 
             }
 
             .user-stats__boxes {
-                @include flex;
+                @include flex(center, center, row, wrap);
+
+                @include min-md {
+                    flex-flow: row nowrap;
+                }
+
             }
 
                 .user-stats__box {
@@ -263,10 +302,24 @@
             }
 
             .discussion__content--stats {
-                @include flex;
+                @include flex(center, center, row, wrap);
                 padding: 30px 0;
+
+                @include min-sm  {
+                    @include flex;                    
+                }
+
             }
 
                 .discussion__content--stat {
-                    margin: 0 15px;
+                    width: 50%;
+                    padding: 0 10%;
+                    white-space: nowrap;
+
+                    @include min-sm {
+                        width: auto;
+                        margin: 0 15px;
+                        padding: 0;
+                    }
+
                 }

@@ -118,8 +118,8 @@
 
             .header__filters {
                 @include flex;
-                margin-left: 20px;
-                margin-top: 3px;
+                margin-left: 18px;
+                margin-top: 10px;
                 margin-bottom: 3px;
 
                 @include min-sm {

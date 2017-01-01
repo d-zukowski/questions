@@ -57,9 +57,14 @@ p {
 }
 
 .text--italic {
-    @include font($gray-600, 1.4rem, 1.6rem, 600);
+    @include font($gray-600, 1.3rem, 1.6rem, 600);
     font-family: $lora;
     font-style: italic;
+
+    @include min-sm {
+        font-size: 1.4rem;
+    }
+
 }
 
 .text--light {
