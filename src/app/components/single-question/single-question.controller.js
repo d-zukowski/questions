@@ -11,9 +11,11 @@ function SingleQuestionController ($scope, $rootScope, $stateParams, moment, Sin
 
             angular.forEach(data.answers, (answerValue, answerKey) => {
                 if (answerValue.comments.length) {    
-                    $rootScope.lastTimeDiscussed = moment(answerValue.comments[0].date).fromNow(true);                
+                    console.log(answerValue.comments[0].date);
+                    $rootScope.lastTimeDiscussed = moment(moment().diff(moment(answerValue.comments[0].date))).format('D');              
                 } else {
-                    $rootScope.lastTimeDiscussed = moment(answerValue[0].date).fromNow(true);
+                    console.log(answerValue[0].date);
+                    $rootScope.lastTimeDiscussed = moment(moment().diff(moment(answerValue[0].date))).format('D');
                 }
             });
 

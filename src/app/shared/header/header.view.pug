@@ -49,8 +49,11 @@ header.header(data-ng-class="{'header--small': currentState == 'single'}")
 
                             .header__main--right.hidden-sm-down(data-ng-if="currentState == 'single'")
                                 span.text--italic Last time discussed 
-                                span.text--italic.separator--both {{ lastTimeDiscussed }} 
-                                span.text--italic ago             
+                                span.text--basic.separator--both {{ lastTimeDiscussed }} 
+                                span.text--italic
+                                    span(data-ng-if="lastTimeDiscussed == 1") day 
+                                    span(data-ng-if="lastTimeDiscussed != 1") days 
+                                    | ago
 
             .header__content--bottom(data-ng-if="currentState == 'all'")
                 .row
