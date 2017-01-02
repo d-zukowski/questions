@@ -1,21 +1,21 @@
 
 
-## **Monterail - Junior Front-End Developer Task**
+# **Monterail - Junior Front-End Developer Task**
 
 Author: **[Dawid Żukowski](http://dawid-zukowski.pl/)**.
 
 
 ---
 
-###**Demo**
+##**Demo**
 
-**[http://monterail-task.dawid-zukowski.pl](http://monterail-task.dawid-zukowski.pl/)**
+**[http://questions.dawid-zukowski.pl/](http://questions.dawid-zukowski.pl/)**
 
 ---
 
-###**Usage**
+##**Usage**
 
-####**Clone repo:**
+###**Clone repo:**
 
 ```
 git clone https://github.com/d-zukowski/questions.git
@@ -23,7 +23,7 @@ git clone https://github.com/d-zukowski/questions.git
 
 ---
 
-####**Install dependencies:**
+###**Install dependencies:**
 
 ```
 npm install
@@ -31,7 +31,7 @@ npm install
 
 ---
 
-####**Run the project:**
+###**Run the project:**
 
 **Build version with local server:**
 
